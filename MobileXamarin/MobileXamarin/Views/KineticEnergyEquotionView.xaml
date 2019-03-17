@@ -1,12 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileXamarin.Views.KineticEnergyEquotionView">
+             xmlns:extensions="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             Title="{extensions:Translate Key=KINETIC_TITLE}"
+             x:Class="MobileXamarin.Views.KineticEnergyEquotionView"
+             BindingContext="{Binding Kinetic, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Kinetic Energy Equotion Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <Label Text="Weight: " VerticalOptions="End" />
+                    <Entry Margin="20, 0, 0, 0" Placeholder="Weight" Keyboard="Numeric" Text="{Binding Weight, Mode=TwoWay}" VerticalOptions="End"/>
+                </StackLayout>
+                
+                <Picker Grid.Row="0" Grid.Column="1" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Speed: " />
+                <Entry Grid.Row="1" Grid.Column="0" Placeholder="Speed" Keyboard="Numeric" Text="{Binding Speed, Mode=TwoWay}" />
+                <Picker Grid.Row="1" Grid.Column="1" />
+
+            </Grid>
+            <Button Text="Solve" Grid.Row="1" />
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

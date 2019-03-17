@@ -19,7 +19,7 @@ namespace MobileXamarin.AppResources.Localization {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -176,6 +176,15 @@ namespace MobileXamarin.AppResources.Localization {
         internal static string INVALID_EMAIL_REQUIRED {
             get {
                 return ResourceManager.GetString("INVALID_EMAIL_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kinetic Energy Equotion.
+        /// </summary>
+        internal static string KINETIC_TITLE {
+            get {
+                return ResourceManager.GetString("KINETIC_TITLE", resourceCulture);
             }
         }
         

@@ -19,25 +19,17 @@ namespace MobileXamarin.ViewModels
 
             SimpleIoc.Default.Register<IHomeViewModel, HomeViewModel>();
             SimpleIoc.Default.Register<IDetailsViewModel, DetailsViewModel>();
+            SimpleIoc.Default.Register<IKineticEnergyEquotionViewModel, KineticEnergyEquotionViewModel>();
 
             SimpleIoc.Default.Register<IPopupsService, PopupsService>();
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
         }
 
-        public IHomeViewModel Home
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<IHomeViewModel>();
-            }
-        }
+        public IHomeViewModel Home => ServiceLocator.Current.GetInstance<IHomeViewModel>();
 
-        public IDetailsViewModel Details
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<IDetailsViewModel>();
-            }
-        }
+        public IDetailsViewModel Details => ServiceLocator.Current.GetInstance<IDetailsViewModel>();
+
+        public IKineticEnergyEquotionViewModel Kinetic =>
+            ServiceLocator.Current.GetInstance<IKineticEnergyEquotionViewModel>();
     }
 }

@@ -66,5 +66,10 @@ namespace MobileXamarin.ViewModels
                 }
             }
         }
+
+        public KineticEnergyEquotionViewModel()
+        {
+            
+        }
     }
 }

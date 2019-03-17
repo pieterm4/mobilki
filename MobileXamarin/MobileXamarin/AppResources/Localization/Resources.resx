@@ -158,6 +158,9 @@
     <value>Invalid email address !
 </value>
   </data>
+  <data name="KINETIC_TITLE" xml:space="preserve">
+    <value>Kinetic Energy Equotion</value>
+  </data>
   <data name="MENU_TEXT" xml:space="preserve">
     <value>Sample Menu</value>
   </data>
