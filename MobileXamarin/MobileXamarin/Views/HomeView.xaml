@@ -23,7 +23,7 @@
                 
             </Image>
 
-            <Button Grid.Row="2"  Text="Next step" HorizontalOptions="CenterAndExpand"  />
+            <Button Command="{Binding NextPageCommand}"  Grid.Row="2"  Text="Next step" HorizontalOptions="CenterAndExpand"  />
         </Grid>
 
 

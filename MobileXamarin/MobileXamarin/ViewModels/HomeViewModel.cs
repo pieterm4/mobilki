@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using GalaSoft.MvvmLight.Command;
+using MobileXamarin.Enums;
 using MobileXamarin.IModels;
 using MobileXamarin.IViewModels;
 using MobileXamarin.Repository;
+using MobileXamarin.Views;
 using INavigationService = Xamarin.Forms.Navigation.INavigationService;
 
 namespace MobileXamarin.ViewModels
@@ -29,7 +31,7 @@ namespace MobileXamarin.ViewModels
 
         public IEnumerable<IEquotion> Equotions => equotions;
 
-        private RelayCommand NextPageCommand { get; }
+        public RelayCommand NextPageCommand { get; }
 
         public HomeViewModel(IEquotionRepository equotionRepository, INavigationService navigationService)
         {
@@ -44,9 +46,15 @@ namespace MobileXamarin.ViewModels
             return SelectedEquotion != null;
         }
 
-        private void GoToNextPage()
+        private async void GoToNextPage()
         {
-            throw new System.NotImplementedException();
+            switch (SelectedEquotion.EquotionType)
+            {
+                case EquotionType.Kinetic:
+                    await NavigationService.NavigateTo(nameof(KineticEnergyEquotionView));
+                    break;
+            }
+            
         }
     }
 }

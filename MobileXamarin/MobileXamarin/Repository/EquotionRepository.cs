@@ -3,6 +3,7 @@
 // Piotr Makowiec 13-03-2019
 
 using System.Collections.Generic;
+using MobileXamarin.Enums;
 using MobileXamarin.IModels;
 using MobileXamarin.Models;
 
@@ -21,8 +22,8 @@ namespace MobileXamarin.Repository
         {
             return new List<IEquotion>
             {
-                new Equotion("Kinetic energy equotion", "energiakinetyczna.png"),
-                new Equotion("Relative speed equotion", "ic_sample.png")
+                new Equotion("Kinetic energy equotion", "energiakinetyczna.png", EquotionType.Kinetic),
+                new Equotion("Relative speed equotion", "ic_sample.png", EquotionType.Kinetic)
             };
         }
 
