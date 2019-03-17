@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileXamarin.App"             
+             xmlns:vm="clr-namespace:MobileXamarin.ViewModels"
+             xmlns:ex="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             xmlns:c="clr-namespace:Xamarin.Forms.ToolKit.Converters;assembly=Xamarin.Forms.ToolKit.Converters">
+
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!-- ViewModelLocator -->
+            <vm:ViewModelLocator x:Key="Locator" />
+
+            <!-- Converters -->
+            <c:SelectedItemConverter x:Key="SelectedItemConverter"/>
+
+            <!-- Styles -->
+            <Style x:Key="LbWhiteStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontFamily" Value="sans-serif"/>
+            </Style>
+
+            <Style x:Key="LbGrayStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="Margin" Value="0,7,0,7"/>
+                <Setter Property="TextColor" Value="#23282d"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="MyEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="#23282d"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="BtnPink" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="BackgroundColor" Value="#7E1335"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="BtnGray" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="BackgroundColor" Value="#23282d"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="BxSeparatorStyle" TargetType="BoxView">
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="Margin" Value="0,100,0,0"/>
+                <Setter Property="WidthRequest" Value="250"/>
+                <Setter Property="BackgroundColor" Value="#7E1335"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="LbCopyRightStyle" TargetType="Label">
+                <Setter Property="Margin" Value="0,-10,0,0"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="TextColor" Value="#23282d"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <!-- My MobileXamarin Template -->
+            <ControlTemplate x:Key="MyLoginTemplate">
+
+                <StackLayout VerticalOptions="FillAndExpand">
+
+                    <StackLayout x:Name="stlHeader"                                  
+                                 HeightRequest="90"
+                                 Orientation="Horizontal"
+                                 BackgroundColor="#23282d">
+
+                        <Image x:Name="imgLogo"                    
+                               Source="{ex:ImageResource Key=ic_sample.png}"/>
+
+                        <StackLayout x:Name="stlDetails" 
+                                     VerticalOptions="Center">
+
+                            <Label x:Name="lbTitle"
+                                   FontSize="Large"
+                                   Style="{StaticResource LbWhiteStyle}"
+                                   Text="{TemplateBinding Path=Parent.BindingContext.Title, Mode=TwoWay}"/>
+
+                            <Label x:Name="lbDescription"
+                                   Style="{StaticResource LbWhiteStyle}"
+                                   Text="{TemplateBinding Path=Parent.BindingContext.Description, Mode=TwoWay}"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView Style="{StaticResource BxSeparatorStyle}"/>
+                    
+                    <ContentPresenter VerticalOptions="FillAndExpand"/>
+
+                    <Label Text="{ex:Translate Key=COPYRIGHT_TEXT}"
+                           Style="{StaticResource LbCopyRightStyle}"/>
+
+                </StackLayout>
+
+            </ControlTemplate>
+
+            <!-- My App Template -->
+            <ControlTemplate x:Key="MyAppTemplate">
+
+                <StackLayout VerticalOptions="FillAndExpand">
+
+                    <ContentPresenter VerticalOptions="FillAndExpand"/>
+
+                    <Label Text="{ex:Translate Key=COPYRIGHT_TEXT}"
+                           Style="{StaticResource LbCopyRightStyle}"/>
+
+                </StackLayout>
+
+            </ControlTemplate>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

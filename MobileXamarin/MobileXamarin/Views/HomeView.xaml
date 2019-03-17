@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileXamarin.Views.HomeView"
+             BackgroundColor="White"
+             Title="{ex:Translate Key=HOME_TITLE}"                          
+             xmlns:ex="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             BindingContext="{Binding Home, Source={StaticResource Locator}}">
+
+    <ContentView ControlTemplate="{StaticResource MyAppTemplate}"
+                 BackgroundColor="White">
+        <Grid Margin="20,100,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Picker Grid.Row="0"  Title="Choose an equotion" 
+                    ItemsSource="{Binding Equotions, Mode=TwoWay}"
+                    SelectedItem="{Binding SelectedEquotion, Mode=TwoWay}"/>
+
+            <Image Grid.Row="1" Source="{Binding SelectedEquotion.Image, Mode=TwoWay}">
+                
+            </Image>
+
+            <Button Grid.Row="2"  Text="Next step" HorizontalOptions="CenterAndExpand"  />
+        </Grid>
+
+
+    </ContentView>
+
+</ContentPage>
