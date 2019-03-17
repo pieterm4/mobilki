@@ -3,6 +3,7 @@
 // Piotr Makowiec 17-03-2019
 
 using System.Collections.Generic;
+using System.Linq;
 using MobileXamarin.Enums;
 
 namespace MobileXamarin.Repository
@@ -26,12 +27,20 @@ namespace MobileXamarin.Repository
             };
         }
 
-        public static string GetUnitString(Units unit)
+        public static string GetStringByUnit(Units unit)
         {
             Initialize();
             var canGetValue = unitRepresentation.TryGetValue(unit, out var representation);
 
             return canGetValue ? representation : string.Empty;
+        }
+
+        public static Units GetUnitByString(string unitString)
+        {
+            Initialize();
+            var unit = unitRepresentation.FirstOrDefault(x => x.Value == unitString).Key;
+
+            return unit;
         }
     }
 }

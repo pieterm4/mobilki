@@ -13,7 +13,7 @@ namespace UnitTest.Repository
         {
             var expected = "s";
 
-            var result = UnitRepository.GetUnitString(Units.Second);
+            var result = UnitRepository.GetStringByUnit(Units.Second);
 
             result.Should().Be(expected);
         }
@@ -23,7 +23,7 @@ namespace UnitTest.Repository
         {
             var expected = "g";
 
-            var result = UnitRepository.GetUnitString(Units.Gram);
+            var result = UnitRepository.GetStringByUnit(Units.Gram);
 
             result.Should().Be(expected);
         }
@@ -33,7 +33,7 @@ namespace UnitTest.Repository
         {
             var expected = "Kg";
 
-            var result = UnitRepository.GetUnitString(Units.Kilogram);
+            var result = UnitRepository.GetStringByUnit(Units.Kilogram);
 
             result.Should().Be(expected);
         }
@@ -43,7 +43,7 @@ namespace UnitTest.Repository
         {
             var expected = "m";
 
-            var result = UnitRepository.GetUnitString(Units.Meter);
+            var result = UnitRepository.GetStringByUnit(Units.Meter);
 
             result.Should().Be(expected);
         }
@@ -53,7 +53,7 @@ namespace UnitTest.Repository
         {
             var expected = "h";
 
-            var result = UnitRepository.GetUnitString(Units.Hour);
+            var result = UnitRepository.GetStringByUnit(Units.Hour);
 
             result.Should().Be(expected);
         }
@@ -63,7 +63,7 @@ namespace UnitTest.Repository
         {
             var expected = "Km";
 
-            var result = UnitRepository.GetUnitString(Units.Kilometer);
+            var result = UnitRepository.GetStringByUnit(Units.Kilometer);
 
             result.Should().Be(expected);
         }
@@ -73,7 +73,7 @@ namespace UnitTest.Repository
         {
             var expected = "Km/h";
 
-            var result = UnitRepository.GetUnitString(Units.KilometerPerHour);
+            var result = UnitRepository.GetStringByUnit(Units.KilometerPerHour);
 
             result.Should().Be(expected);
         }
@@ -83,7 +83,7 @@ namespace UnitTest.Repository
         {
             var expected = "m/s";
 
-            var result = UnitRepository.GetUnitString(Units.MeterForSecond);
+            var result = UnitRepository.GetStringByUnit(Units.MeterForSecond);
 
             result.Should().Be(expected);
         }

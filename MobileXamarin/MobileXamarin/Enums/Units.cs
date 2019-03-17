@@ -13,6 +13,7 @@ namespace MobileXamarin.Enums
         KilometerPerHour,
         MeterForSecond,
         Kilogram,
-        Gram
+        Gram,
+        Unknown
     }
 }

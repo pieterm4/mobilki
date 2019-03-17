@@ -3,8 +3,11 @@
 // Piotr Makowiec 16-03-2019
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using MobileXamarin.Enums;
 using MobileXamarin.IViewModels;
+using MobileXamarin.Repository;
 
 namespace MobileXamarin.ViewModels
 {
@@ -12,8 +15,8 @@ namespace MobileXamarin.ViewModels
     {
         private double weight;
         private double speed;
-        private Units weightUnits;
-        private Units speedUnits;
+        private string selectedWeightUnit;
+        private string selectedSpeedUnit;
 
         public double Weight
         {
@@ -41,35 +44,60 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        public Units WeightUnits
+        public ObservableCollection<string> WeightUnits { get; set; }
+
+        public ObservableCollection<string> SpeedUnits { get; set; }
+
+        public string SelectedWeightUnit
         {
-            get => weightUnits;
+            get => selectedWeightUnit;
             set
             {
-                if (weightUnits != value)
+                if (selectedWeightUnit != value)
                 {
-                    weightUnits = value;
-                    OnPropertyChanged(nameof(WeightUnits));
+                    selectedWeightUnit = value;
+                    OnPropertyChanged(nameof(SelectedWeightUnit));
                 }
             }
         }
 
-        public Units SpeedUnits
+        public string SelectedSpeedUnit
         {
-            get => speedUnits;
+            get => selectedSpeedUnit;
             set
             {
-                if (speedUnits != value)
+                if (selectedSpeedUnit != value)
                 {
-                    speedUnits = value;
-                    OnPropertyChanged(nameof(SpeedUnits));
+                    selectedSpeedUnit = value;
+                    OnPropertyChanged(nameof(SelectedSpeedUnit));
                 }
             }
         }
 
         public KineticEnergyEquotionViewModel()
         {
-            
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            var weightUnits = new List<string>
+            {
+                UnitRepository.GetStringByUnit(Units.Gram),
+                UnitRepository.GetStringByUnit(Units.Kilogram)
+            };
+
+            var speedUnits = new List<string>
+            {
+                UnitRepository.GetStringByUnit(Units.KilometerPerHour),
+                UnitRepository.GetStringByUnit(Units.MeterForSecond)
+            };
+
+            WeightUnits = new ObservableCollection<string>(weightUnits);
+            SpeedUnits = new ObservableCollection<string>(speedUnits);
+
+            SelectedSpeedUnit = UnitRepository.GetStringByUnit(Units.KilometerPerHour);
+            SelectedWeightUnit = UnitRepository.GetStringByUnit(Units.Kilogram);
         }
     }
 }

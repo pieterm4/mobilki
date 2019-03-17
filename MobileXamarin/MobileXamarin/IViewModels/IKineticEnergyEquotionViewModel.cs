@@ -12,8 +12,8 @@ namespace MobileXamarin.IViewModels
 
         double Speed { get; set; }
 
-        Units WeightUnits { get; set; }
+        string SelectedWeightUnit { get; set; }
 
-        Units SpeedUnits { get; set; }
+        string SelectedSpeedUnit { get; set; }
     }
 }
