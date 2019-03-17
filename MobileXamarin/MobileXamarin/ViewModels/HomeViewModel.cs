@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using MobileXamarin.IModels;
 using MobileXamarin.IViewModels;
-using MobileXamarin.Models;
 using MobileXamarin.Repository;
-using Xamarin.Forms;
 using INavigationService = Xamarin.Forms.Navigation.INavigationService;
 
 namespace MobileXamarin.ViewModels
@@ -15,8 +12,6 @@ namespace MobileXamarin.ViewModels
         private readonly IEquotionRepository equotionRepository;
         private readonly IEnumerable<IEquotion> equotions;
         private IEquotion selectedEquotion;
-
-        public string WelcomeText => "Welcome in Xamarin Bitch!";
 
         public IEquotion SelectedEquotion
         {

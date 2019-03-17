@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MobileXamarin.Enums;
 using MobileXamarin.Repository;
 
-namespace UnitTest
+namespace UnitTest.Repository
 {
     [TestClass]
     public class UnitRepositoryTest

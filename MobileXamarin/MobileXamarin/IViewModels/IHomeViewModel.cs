@@ -6,8 +6,6 @@ namespace MobileXamarin.IViewModels
 {
     public interface IHomeViewModel
     {
-        string WelcomeText { get; }
-
         IEnumerable<IEquotion> Equotions { get; }
     }
 }
