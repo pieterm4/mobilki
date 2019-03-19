@@ -6,6 +6,6 @@ namespace MobileXamarin.IViewModels
 {
     public interface IHomeViewModel
     {
-        IEnumerable<IEquotion> Equotions { get; }
+        IEnumerable<IEquation> Equations { get; }
     }
 }

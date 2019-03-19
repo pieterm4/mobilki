@@ -1,11 +1,12 @@
-﻿// EquotionType.cs
+﻿// EquationType.cs
 // All rights reserved
 // Piotr Makowiec 17-03-2019
 
 namespace MobileXamarin.Enums
 {
-    public enum EquotionType
+    public enum EquationType
     {
-        Kinetic
+        Kinetic,
+        Unknown
     }
 }

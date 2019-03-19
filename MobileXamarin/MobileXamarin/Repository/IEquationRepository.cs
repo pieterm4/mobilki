@@ -1,4 +1,4 @@
-﻿// IEquotionRepository.cs
+﻿// IEquationRepository.cs
 // All rights reserved
 // Piotr Makowiec 13-03-2019
 
@@ -7,8 +7,8 @@ using MobileXamarin.IModels;
 
 namespace MobileXamarin.Repository
 {
-    public interface IEquotionRepository
+    public interface IEquationRepository
     {
-        IEnumerable<IEquotion> GetEquotions();
+        IEnumerable<IEquation> GetEquations();
     }
 }

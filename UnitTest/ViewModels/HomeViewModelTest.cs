@@ -15,14 +15,14 @@ namespace UnitTest.ViewModels
     [TestClass]
     public class HomeViewModelTest
     {
-        private Mock<IEquotionRepository> equotionRepository;
+        private Mock<IEquationRepository> equotionRepository;
         private Mock<INavigationService> navigationService;
 
         [TestInitialize]
         public void Setup()
         {
-            equotionRepository = new Mock<IEquotionRepository>();
-            equotionRepository.Setup(x => x.GetEquotions());
+            equotionRepository = new Mock<IEquationRepository>();
+            equotionRepository.Setup(x => x.GetEquations());
             navigationService = new Mock<INavigationService>();
             navigationService.Setup(x => x.NavigateTo(It.IsAny<string>()));
         }
@@ -32,7 +32,7 @@ namespace UnitTest.ViewModels
         {
             var viewModel = GetObjectUnderTest();
 
-            equotionRepository.Verify(x => x.GetEquotions(), Times.Once);
+            equotionRepository.Verify(x => x.GetEquations(), Times.Once);
         }
 
         [TestMethod]
@@ -46,10 +46,10 @@ namespace UnitTest.ViewModels
         [TestMethod]
         public void Given_HomeViewModel_When_SelectedEquotionIsNotNull_Then_NextPageCommandCanExecuteShouldBeTrue()
         {
-            var equotion = Mock.Of<IEquotion>();
+            var equotion = Mock.Of<IEquation>();
             var viewModel = GetObjectUnderTest();
 
-            viewModel.SelectedEquotion = equotion;
+            viewModel.SelectedEquation = equotion;
 
             viewModel.NextPageCommand.CanExecute(new object()).Should().BeTrue();
         }

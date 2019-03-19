@@ -159,7 +159,7 @@
 </value>
   </data>
   <data name="KINETIC_TITLE" xml:space="preserve">
-    <value>Kinetic Energy Equotion</value>
+    <value>Kinetic Energy Equation</value>
   </data>
   <data name="MENU_TEXT" xml:space="preserve">
     <value>Sample Menu</value>
@@ -177,6 +177,9 @@
     <value>Password is required !
 </value>
   </data>
+  <data name="RESULT_TITLE" xml:space="preserve">
+    <value>Result</value>
+  </data>
   <data name="SEND_TEXT" xml:space="preserve">
     <value>Send</value>
   </data>
@@ -185,6 +188,12 @@
   </data>
   <data name="SIGN_UP_TEXT" xml:space="preserve">
     <value>Sign Up</value>
+  </data>
+  <data name="Unknown_speed_unit" xml:space="preserve">
+    <value>Unknown speed unit</value>
+  </data>
+  <data name="Unknown_weight_unit" xml:space="preserve">
+    <value>Unknown weight unit</value>
   </data>
   <data name="USERNAME_PLACEHOLDER" xml:space="preserve">
     <value>Username</value>

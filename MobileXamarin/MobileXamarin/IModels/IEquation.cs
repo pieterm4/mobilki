@@ -1,4 +1,4 @@
-﻿// IEquotion.cs
+﻿// IEquation.cs
 // All rights reserved
 // Piotr Makowiec 16-03-2019
 
@@ -7,10 +7,10 @@ using Xamarin.Forms;
 
 namespace MobileXamarin.IModels
 {
-    public interface IEquotion
+    public interface IEquation
     {
         string Name { get; }
         ImageSource Image { get; }
-        EquotionType EquotionType { get; }
+        EquationType EquationType { get; }
     }
 }

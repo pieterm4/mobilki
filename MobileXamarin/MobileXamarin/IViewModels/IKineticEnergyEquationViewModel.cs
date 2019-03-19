@@ -1,12 +1,10 @@
-﻿// IKineticEnergyEquotionViewModel.cs
+﻿// IKineticEnergyEquationViewModel.cs
 // All rights reserved
 // Piotr Makowiec 16-03-2019
 
-using MobileXamarin.Enums;
-
 namespace MobileXamarin.IViewModels
 {
-    public interface IKineticEnergyEquotionViewModel : IEquotionViewModelBase
+    public interface IKineticEnergyEquationViewModel : IEquationViewModelBase
     {
         double Weight { get; set; }
 

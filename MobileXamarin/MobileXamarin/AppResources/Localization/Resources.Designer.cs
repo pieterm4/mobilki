@@ -180,7 +180,7 @@ namespace MobileXamarin.AppResources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kinetic Energy Equotion.
+        ///   Looks up a localized string similar to Kinetic Energy Equation.
         /// </summary>
         internal static string KINETIC_TITLE {
             get {
@@ -235,6 +235,15 @@ namespace MobileXamarin.AppResources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        internal static string RESULT_TITLE {
+            get {
+                return ResourceManager.GetString("RESULT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Send.
         /// </summary>
         internal static string SEND_TEXT {
@@ -258,6 +267,24 @@ namespace MobileXamarin.AppResources.Localization {
         internal static string SIGN_UP_TEXT {
             get {
                 return ResourceManager.GetString("SIGN_UP_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown speed unit.
+        /// </summary>
+        internal static string Unknown_speed_unit {
+            get {
+                return ResourceManager.GetString("Unknown_speed_unit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown weight unit.
+        /// </summary>
+        internal static string Unknown_weight_unit {
+            get {
+                return ResourceManager.GetString("Unknown_weight_unit", resourceCulture);
             }
         }
         

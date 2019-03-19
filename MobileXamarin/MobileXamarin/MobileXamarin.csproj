@@ -75,6 +75,7 @@
     <None Remove="AppResources\Assets\ic_sample.png" />
     <None Remove="AppResources\Assets\malpa.jpg" />
     <None Remove="AppResources\malpa.jpg" />
+    <None Remove="Views\ResultView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,6 +84,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ResultView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

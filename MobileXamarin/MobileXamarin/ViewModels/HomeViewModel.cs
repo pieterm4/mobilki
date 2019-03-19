@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using MobileXamarin.Enums;
 using MobileXamarin.IModels;
@@ -11,47 +12,44 @@ namespace MobileXamarin.ViewModels
 {
     public class HomeViewModel : BaseViewModel, IHomeViewModel
     {
-        private readonly IEquotionRepository equotionRepository;
-        private readonly IEnumerable<IEquotion> equotions;
-        private IEquotion selectedEquotion;
+        private IEquation selectedEquation;
 
-        public IEquotion SelectedEquotion
+        public IEquation SelectedEquation
         {
-            get => selectedEquotion;
+            get => selectedEquation;
             set
             {
-                if (selectedEquotion != value)
+                if (selectedEquation != value)
                 {
-                    selectedEquotion = value;
-                    OnPropertyChanged(nameof(SelectedEquotion));
+                    selectedEquation = value;
+                    OnPropertyChanged(nameof(SelectedEquation));
                     NextPageCommand.RaiseCanExecuteChanged();
                 }
             }
         }
 
-        public IEnumerable<IEquotion> Equotions => equotions;
+        public IEnumerable<IEquation> Equations { get; }
 
         public RelayCommand NextPageCommand { get; }
 
-        public HomeViewModel(IEquotionRepository equotionRepository, INavigationService navigationService)
+        public HomeViewModel(IEquationRepository equationRepository, INavigationService navigationService)
         {
-            this.equotionRepository = equotionRepository;
-            equotions = equotionRepository.GetEquotions();
+            Equations = equationRepository.GetEquations();
             NavigationService = navigationService;
-            NextPageCommand = new RelayCommand(GoToNextPage, CanGoToNextPage);
+            NextPageCommand = new RelayCommand(async () => await GoToNextPage(), CanGoToNextPage);
         }
 
         private bool CanGoToNextPage()
         {
-            return SelectedEquotion != null;
+            return SelectedEquation != null;
         }
 
-        private async void GoToNextPage()
+        private async Task GoToNextPage()
         {
-            switch (SelectedEquotion.EquotionType)
+            switch (SelectedEquation.EquationType)
             {
-                case EquotionType.Kinetic:
-                    await NavigationService.NavigateTo(nameof(KineticEnergyEquotionView));
+                case EquationType.Kinetic:
+                    await NavigationService.NavigateTo(nameof(KineticEnergyEquationView));
                     break;
             }
             

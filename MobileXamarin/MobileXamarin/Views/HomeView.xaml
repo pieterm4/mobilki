@@ -16,10 +16,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Picker Grid.Row="0"  Title="Choose an equotion" 
-                    ItemsSource="{Binding Equotions, Mode=TwoWay}"
-                    SelectedItem="{Binding SelectedEquotion, Mode=TwoWay}"/>
+                    ItemsSource="{Binding Equations, Mode=TwoWay}"
+                    SelectedItem="{Binding SelectedEquation, Mode=TwoWay}"/>
 
-            <Image Grid.Row="1" Source="{Binding SelectedEquotion.Image, Mode=TwoWay}">
+            <Image Grid.Row="1" Source="{Binding SelectedEquation.Image, Mode=TwoWay}">
                 
             </Image>
 
