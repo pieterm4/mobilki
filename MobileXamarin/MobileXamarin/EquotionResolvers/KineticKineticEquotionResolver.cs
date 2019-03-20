@@ -22,13 +22,13 @@ namespace MobileXamarin.EquotionResolvers
 
             await Task.Run(() =>
             {
-                var secondStep = $"Ek = ({weight} * c^2) / sqrt(1 - ({speed}^2) / c^2) - {weight} * c^2";
+                var secondStep = @"E_k = \frac{weight * c^2}{\sqrt{\frac{1 - speed^2}{c^2}}} - weight * c^2";
                 var mathResult =
                     ((normalizedWeight * Math.Pow(lightSpeed, 2.0)) /
                     Math.Sqrt(1.0 - (Math.Pow(normalizedSpeed, 2.0)) / Math.Pow(lightSpeed, 2.0))) -
                     normalizedWeight * Math.Pow(lightSpeed, 2.0);
 
-                var thirdStep = $"Ek = {mathResult} J";
+                var thirdStep = $"E_k = {mathResult} [J]";
                 result.Add(secondStep);
                 result.Add(thirdStep);
             });

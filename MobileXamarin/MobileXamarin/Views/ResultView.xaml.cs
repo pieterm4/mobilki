@@ -1,4 +1,6 @@
-﻿using MobileXamarin.IViewModels;
+﻿using System.Collections.Specialized;
+using System.Linq;
+using MobileXamarin.IViewModels;
 using MobileXamarin.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +15,18 @@ namespace MobileXamarin.Views
         {
             InitializeComponent();
             ViewModel = BindingContext as IResultViewModel;
+            //if (ViewModel != null)
+            //{
+            //    ViewModel.Result.CollectionChanged += OnCollectionChanged;
+            //    Math.LaTeX = string.Join(@"\\", ViewModel.Result);
+            //}
+        }
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            //Math.LaTeX = string.Empty;
+            //var newItems = e.NewItems;
+            //Math.LaTeX = string.Join(@"\\", newItems);
         }
 
         protected override bool OnBackButtonPressed()

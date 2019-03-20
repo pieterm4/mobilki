@@ -5,8 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using CSharpMath.Rendering;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Win32.SafeHandles;
@@ -21,9 +23,9 @@ namespace MobileXamarin.ViewModels
         private readonly IMessenger messenger;
         private bool disposed = false;
         private readonly SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
-        private ObservableCollection<string> result;
+        private ObservableCollection<MathSource> result;
 
-        public ObservableCollection<string> Result
+        public ObservableCollection<MathSource> Result
         {
             get => result;
             set
@@ -48,9 +50,17 @@ namespace MobileXamarin.ViewModels
             PopupService = popupsService;
             Finish = new RelayCommand(async () => await FinishExecute(), CanFinishExecute);
             this.messenger.Register<IEnumerable<string>>(this, OnGetMessage);
+            Result = new ObservableCollection<MathSource>();
+            SetupResult();
+        }
 
-            var parameters = GetResult();
-            Result = new ObservableCollection<string>(parameters);
+        private void SetupResult()
+        {
+            var parameters = GetResult().ToList();
+            foreach (var parameter in parameters)
+            {
+                Result.Add(new MathSource(parameter));
+            }
         }
 
         private async Task FinishExecute()
@@ -69,7 +79,11 @@ namespace MobileXamarin.ViewModels
 
         private void OnGetMessage(IEnumerable<string> obj)
         {
-            Result = new ObservableCollection<string>(obj);
+            Result.Clear();
+            foreach (var variable in obj)
+            {
+                Result.Add(new MathSource(variable));
+            }
         }
 
         private IEnumerable<string> GetResult()
@@ -91,8 +105,6 @@ namespace MobileXamarin.ViewModels
             if (disposing)
             {
                 handle.Dispose();
-                // Free any other managed objects here.
-                //
             }
 
             disposed = true;

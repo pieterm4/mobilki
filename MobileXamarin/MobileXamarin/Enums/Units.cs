@@ -14,6 +14,8 @@ namespace MobileXamarin.Enums
         MeterForSecond,
         Kilogram,
         Gram,
+        Celsius,
+        Kelvin,
         Unknown
     }
 }

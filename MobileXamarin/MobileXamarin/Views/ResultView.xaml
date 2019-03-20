@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:extensions="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             xmlns:math="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
              x:Class="MobileXamarin.Views.ResultView"
              Title="{extensions:Translate Key=RESULT_TITLE}" 
              BindingContext="{Binding Result, Source={StaticResource Locator}}">
@@ -14,7 +15,15 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Text="Result" Margin="10, 20, 10, 0" FontSize="Large"/>
             <ScrollView Grid.Row="1" Margin="10, 20, 10, 0">
-                <ListView ItemsSource="{Binding Result, Mode=TwoWay}" HasUnevenRows="True"/>
+                <ListView ItemsSource="{Binding Result, Mode=TwoWay}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <math:MathView Source="{Binding}" FontSize="50" HorizontalOptions="Start"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </ScrollView>
             <Button Command="{Binding Finish}"  Grid.Row="2"  Text="Finish" HorizontalOptions="CenterAndExpand"  />
         </Grid>

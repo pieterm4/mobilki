@@ -4,13 +4,14 @@
 
 using System;
 using System.Collections.ObjectModel;
+using CSharpMath.Rendering;
 using GalaSoft.MvvmLight.Command;
 
 namespace MobileXamarin.IViewModels
 {
     public interface IResultViewModel : IDisposable
     {
-        ObservableCollection<string> Result { get; set; }
+        ObservableCollection<MathSource> Result { get; set; }
         RelayCommand Finish { get; set; }
     }
 }
