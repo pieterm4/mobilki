@@ -1,4 +1,4 @@
-﻿// LagrangeEquotionViewModel.cs
+﻿// LagrangeEquationViewModel.cs
 // All rights reserved
 // Piotr Makowiec 24-03-2019
 
@@ -17,7 +17,7 @@ namespace MobileXamarin.ViewModels
     /// <summary>
     /// Lagrange interpolation viewmodel
     /// </summary>
-    public class LagrangeEquotionViewModel : EquationViewModelBase, ILagrangeEquotionViewModel
+    public class LagrangeEquationViewModel : EquationViewModelBase, ILagrangeEquationViewModel
     {
         private readonly ILagrangeResolver resolver;
         private readonly IMessenger messenger;
@@ -82,7 +82,7 @@ namespace MobileXamarin.ViewModels
         /// </summary>
         /// <param name="resolver">Lagrange interpolation equation resolver <see cref="ILagrangeResolver"/></param>
         /// <param name="messenger">Messenger <see cref="IMessenger"/></param>
-        public LagrangeEquotionViewModel(ILagrangeResolver resolver, IMessenger messenger)
+        public LagrangeEquationViewModel(ILagrangeResolver resolver, IMessenger messenger)
         {
             this.resolver = resolver;
             this.messenger = messenger;

@@ -1,4 +1,4 @@
-﻿// ILagrangeEquotionViewModel.cs
+﻿// ILagrangeEquationViewModel.cs
 // All rights reserved
 // Piotr Makowiec 24-03-2019
 
@@ -11,7 +11,7 @@ namespace MobileXamarin.IViewModels
     /// <summary>
     /// Lagrange interpolation equation viewmodel
     /// </summary>
-    public interface ILagrangeEquotionViewModel : IEquationViewModelBase
+    public interface ILagrangeEquationViewModel : IEquationViewModelBase
     {
         /// <summary>
         /// Gets or sets start control points for interpolation

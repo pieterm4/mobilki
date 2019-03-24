@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileXamarin.IOS", "Mobile
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileXamarin.UWP", "MobileXamarin\MobileXamarin.UWP\MobileXamarin.UWP.csproj", "{46CA0B2C-EF6E-40D9-A134-B993C61F9FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F375A582-09C9-4FA4-B8C0-14C5E38B3A82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F375A582-09C9-4FA4-B8C0-14C5E38B3A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

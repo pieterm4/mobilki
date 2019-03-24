@@ -10,8 +10,14 @@ using Xamarin.Forms.Navigation;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// IoC container
+    /// </summary>
     public class ViewModelLocator
     {
+        /// <summary>
+        /// Constructor for ViewModelLocator
+        /// </summary>
         [Preserve]
         public ViewModelLocator()
         {
@@ -25,7 +31,7 @@ namespace MobileXamarin.ViewModels
             SimpleIoc.Default.Register<IHomeViewModel, HomeViewModel>();
             SimpleIoc.Default.Register<IKineticEnergyEquationViewModel, KineticEnergyEquationViewModel>();
             SimpleIoc.Default.Register<IResultViewModel, ResultViewModel>();
-            SimpleIoc.Default.Register<ILagrangeEquotionViewModel, LagrangeEquotionViewModel>();
+            SimpleIoc.Default.Register<ILagrangeEquationViewModel, LagrangeEquationViewModel>();
             SimpleIoc.Default.Register<IRocketEquationViewModel, RocketEquationViewModel>();
 
             SimpleIoc.Default.Register<IPopupsService, PopupsService>();
@@ -33,15 +39,30 @@ namespace MobileXamarin.ViewModels
             SimpleIoc.Default.Register<IMessenger, Messenger>();
         }
 
+        /// <summary>
+        /// Gets an instance for <see cref="IHomeViewModel"/> <see cref="HomeViewModel"/>
+        /// </summary>
         public IHomeViewModel Home => ServiceLocator.Current.GetInstance<IHomeViewModel>();
 
+        /// <summary>
+        /// Gets an instance for <see cref="IKineticEnergyEquationViewModel"/> <see cref="KineticEnergyEquationViewModel"/>
+        /// </summary>
         public IKineticEnergyEquationViewModel Kinetic =>
             ServiceLocator.Current.GetInstance<IKineticEnergyEquationViewModel>();
 
+        /// <summary>
+        /// Gets an instance for <see cref="IResultViewModel"/> <see cref="ResultViewModel"/>
+        /// </summary>
         public IResultViewModel Result => ServiceLocator.Current.GetInstance<IResultViewModel>();
 
-        public ILagrangeEquotionViewModel Lagrange => ServiceLocator.Current.GetInstance<ILagrangeEquotionViewModel>();
+        /// <summary>
+        /// Gets an instance for <see cref="ILagrangeEquationViewModel"/> <see cref="LagrangeEquationViewModel"/>
+        /// </summary>
+        public ILagrangeEquationViewModel Lagrange => ServiceLocator.Current.GetInstance<ILagrangeEquationViewModel>();
 
+        /// <summary>
+        /// Gets an instance for <see cref="IRocketEquationViewModel"/> <see cref="RocketEquationViewModel"/>
+        /// </summary>
         public IRocketEquationViewModel Rocket => ServiceLocator.Current.GetInstance<IRocketEquationViewModel>();
     }
 }

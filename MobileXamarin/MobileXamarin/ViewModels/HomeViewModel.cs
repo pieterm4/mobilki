@@ -69,6 +69,9 @@ namespace MobileXamarin.ViewModels
                 case EquationType.Lagrange:
                     await NavigationService.NavigateTo(nameof(LagrangeEquotionView), animated: true);
                     break;
+                case EquationType.Rocket:
+                    await NavigationService.NavigateTo(nameof(RocketEquationView), animated: true);
+                    break;
             }
             
         }

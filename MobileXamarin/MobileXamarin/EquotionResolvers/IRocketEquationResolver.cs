@@ -2,6 +2,9 @@
 // All rights reserved
 // Piotr Makowiec 24-03-2019
 
+using System.Threading.Tasks;
+using MobileXamarin.Models;
+
 namespace MobileXamarin.EquotionResolvers
 {
     /// <summary>
@@ -9,6 +12,11 @@ namespace MobileXamarin.EquotionResolvers
     /// </summary>
     public interface IRocketEquationResolver
     {
-        
+        /// <summary>
+        /// Resolves rocket equation
+        /// </summary>
+        /// <param name="rocketParameter">Parameters of the rocket</param>
+        /// <returns></returns>
+        Task<RocketEquationResult> Resolve(RocketParameter rocketParameter);
     }
 }
