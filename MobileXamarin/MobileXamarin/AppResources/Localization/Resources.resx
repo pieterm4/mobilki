@@ -202,4 +202,7 @@
     <value>Username is required !
 </value>
   </data>
+  <data name="LAGRANGE" xml:space="preserve">
+    <value>Lagrange Interpolation</value>
+  </data>
 </root>

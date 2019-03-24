@@ -12,27 +12,16 @@
   <ItemGroup>
     <Content Include="App.xaml" />
     <Content Include="Views\HomeView.xaml" />
-    <Content Include="Views\DetailsView.xaml" />
-
-    <Content Include="ViewModels\DetailsViewModel.cs" />
     <Content Include="ViewModels\HomeViewModel.cs" />
     <Content Include="ViewModels\BaseViewModel.cs" />
     <Content Include="ViewModels\ViewModelLocator.cs" />
-
-    <Content Include="IViewModels\IDetailsViewModel.cs" />
     <Content Include="IViewModels\IHomeViewModel.cs" />
-
-    <Content Include="Models\SampleModel.cs" />
-    <Content Include="Models\User.cs" />
 
     <Content Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Content>
     <Content Include="Views\HomeView.xaml.cs">
       <DependentUpon>Views\HomeView.xaml</DependentUpon>
-    </Content>
-    <Content Include="Views\DetailsView.xaml.cs">
-      <DependentUpon>Views\DetailsView.xaml</DependentUpon>
     </Content>
   </ItemGroup>
   
@@ -42,6 +31,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Assets\energiakinetyczna.png" />
     <EmbeddedResource Include="AppResources\Assets\ic_sample.png" />
+    <EmbeddedResource Include="AppResources\Assets\lagrange.png" />
     <EmbeddedResource Include="AppResources\Assets\malpa.jpg" />
     <EmbeddedResource Include="AppResources\Localization\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -52,6 +42,11 @@
 
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
+    <PackageReference Include="CSharpMath" Version="0.2.0" />
+    <PackageReference Include="CSharpMath.Forms" Version="0.2.0" />
+    <PackageReference Include="CSharpMath.Rendering" Version="0.2.0" />
+    <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.220655" />
     <PackageReference Include="Xamarin.Forms.Navigation" Version="1.0.1" />
@@ -73,8 +68,10 @@
   <ItemGroup>
     <None Remove="AppResources\Assets\energiakinetyczna.png" />
     <None Remove="AppResources\Assets\ic_sample.png" />
+    <None Remove="AppResources\Assets\lagrange.png" />
     <None Remove="AppResources\Assets\malpa.jpg" />
     <None Remove="AppResources\malpa.jpg" />
+    <None Remove="Views\LagrangeEquotionView.xaml" />
     <None Remove="Views\ResultView.xaml" />
   </ItemGroup>
 
@@ -87,6 +84,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\LagrangeEquotionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ResultView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -96,12 +96,13 @@
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\DetailsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Views\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Converters\" />
   </ItemGroup>
 
 </Project>

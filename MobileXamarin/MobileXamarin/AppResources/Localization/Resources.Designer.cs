@@ -189,6 +189,15 @@ namespace MobileXamarin.AppResources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lagrange Interpolation.
+        /// </summary>
+        internal static string LAGRANGE {
+            get {
+                return ResourceManager.GetString("LAGRANGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sample Menu.
         /// </summary>
         internal static string MENU_TEXT {

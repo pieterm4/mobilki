@@ -23,7 +23,7 @@ namespace MobileXamarin.Repository
             return new List<IEquation>
             {
                 new Equation("Kinetic energy equation", "energiakinetyczna.png", EquationType.Kinetic),
-                new Equation("Relative speed equation", "ic_sample.png", EquationType.Unknown)
+                new Equation("Lagrange interpolation", "lagrange.png", EquationType.Lagrange)
             };
         }
 

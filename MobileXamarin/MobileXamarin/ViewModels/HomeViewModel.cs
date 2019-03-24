@@ -49,7 +49,10 @@ namespace MobileXamarin.ViewModels
             switch (SelectedEquation.EquationType)
             {
                 case EquationType.Kinetic:
-                    await NavigationService.NavigateTo(nameof(KineticEnergyEquationView));
+                    await NavigationService.NavigateTo(nameof(KineticEnergyEquationView), animated:true);
+                    break;
+                case EquationType.Lagrange:
+                    await NavigationService.NavigateTo(nameof(LagrangeEquotionView), animated: true);
                     break;
             }
             

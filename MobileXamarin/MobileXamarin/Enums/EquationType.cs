@@ -7,6 +7,7 @@ namespace MobileXamarin.Enums
     public enum EquationType
     {
         Kinetic,
+        Lagrange,
         Unknown
     }
 }

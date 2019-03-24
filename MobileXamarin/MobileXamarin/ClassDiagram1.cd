@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MobileXamarin.App">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.AppResources.Localization.Resources" Collapsed="true">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAIIAACJAAIAEEAgoIADEAACARCAAAAAAECLAAACAJA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>EquotionResolvers\KineticKineticEquotionResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MobileXamarin.Extensions.ImageResourceExtension" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\ImageResourceExtension.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MobileXamarin.Models.Equation" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgEAAAAAAQEAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Equation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MobileXamarin.Repository.EquationRepository" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAQAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\EquationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MobileXamarin.Repository.UnitRepository">
+    <Position X="19.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAQAAABAAAAAA=</HashCode>
+      <FileName>Repository\UnitRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.BaseViewModel">
+    <Position X="8" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAACAAAgAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.EquationViewModelBase">
+    <Position X="8" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\EquationViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.HomeViewModel">
+    <Position X="11.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAQIAAAAAAAEAAAAAAAEAAAAgAAAAA=</HashCode>
+      <FileName>ViewModels\HomeViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.KineticEnergyEquationViewModel">
+    <Position X="9" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAAAAAAAAQAAAAIAAAgBACAAAQAkABAIAEAQAAQ=</HashCode>
+      <FileName>ViewModels\KineticEnergyEquationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.ResultViewModel">
+    <Position X="4.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAACAAAAAABAAAAAQAAEAAAAAgAECCAAAAAAg=</HashCode>
+      <FileName>ViewModels\ResultViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.ViewModels.ViewModelLocator">
+    <Position X="12.75" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAQAAAAQAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelLocator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.Views.HomeView">
+    <Position X="13.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\HomeView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.Views.KineticEnergyEquationView">
+    <Position X="16.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\KineticEnergyEquationView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileXamarin.Views.ResultView">
+    <Position X="15.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAIAAAAA=</HashCode>
+      <FileName>Views\ResultView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MobileXamarin.EquotionResolvers.IKineticEquotionResolver">
+    <Position X="15.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquotionResolvers\IKineticEquotionResolver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.IModels.IEquation">
+    <Position X="16" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>IModels\IEquation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.IViewModels.IEquationViewModelBase">
+    <Position X="4.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModels\IEquationViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.IViewModels.IHomeViewModel">
+    <Position X="20" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModels\IHomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.IViewModels.IKineticEnergyEquationViewModel">
+    <Position X="4.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABACAAAAAAAAAAAAAQAAQ=</HashCode>
+      <FileName>IViewModels\IKineticEnergyEquationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.IViewModels.IResultViewModel">
+    <Position X="17.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>IViewModels\IResultViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MobileXamarin.Repository.IEquationRepository">
+    <Position X="17.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\IEquationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MobileXamarin.Enums.EquationType">
+    <Position X="11.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Enums\EquationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MobileXamarin.Enums.Units">
+    <Position X="13.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQAgAAAIAAAAAAACAIAAAAgAAIAhAAAAAAAABA=</HashCode>
+      <FileName>Enums\Units.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
