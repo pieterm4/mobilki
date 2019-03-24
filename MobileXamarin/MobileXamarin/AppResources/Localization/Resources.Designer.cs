@@ -253,6 +253,15 @@ namespace MobileXamarin.AppResources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vertical movement of the rocket.
+        /// </summary>
+        internal static string ROCKET {
+            get {
+                return ResourceManager.GetString("ROCKET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Send.
         /// </summary>
         internal static string SEND_TEXT {

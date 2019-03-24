@@ -9,6 +9,10 @@
     <EnableDefaultXamlItems>false</EnableDefaultXamlItems>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\piotr\source\repos\MobileXamarin\MobileXamarin\MobileXamarin\MobileXamarin.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include="App.xaml" />
     <Content Include="Views\HomeView.xaml" />
@@ -33,6 +37,7 @@
     <EmbeddedResource Include="AppResources\Assets\ic_sample.png" />
     <EmbeddedResource Include="AppResources\Assets\lagrange.png" />
     <EmbeddedResource Include="AppResources\Assets\malpa.jpg" />
+    <EmbeddedResource Include="AppResources\Assets\rocket.png" />
     <EmbeddedResource Include="AppResources\Localization\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -45,6 +50,10 @@
     <PackageReference Include="CSharpMath" Version="0.2.0" />
     <PackageReference Include="CSharpMath.Forms" Version="0.2.0" />
     <PackageReference Include="CSharpMath.Rendering" Version="0.2.0" />
+    <PackageReference Include="Doxygen" Version="1.8.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microcharts" Version="0.7.1" />
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
@@ -70,6 +79,7 @@
     <None Remove="AppResources\Assets\ic_sample.png" />
     <None Remove="AppResources\Assets\lagrange.png" />
     <None Remove="AppResources\Assets\malpa.jpg" />
+    <None Remove="AppResources\Assets\rocket.png" />
     <None Remove="AppResources\malpa.jpg" />
     <None Remove="Views\LagrangeEquotionView.xaml" />
     <None Remove="Views\ResultView.xaml" />

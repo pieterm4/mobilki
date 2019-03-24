@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MobileXamarin</name>
+    </assembly>
+    <members>
+        <member name="T:MobileXamarin.AppResources.Localization.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.APPLICATION_NAME">
+            <summary>
+              Looks up a localized string similar to Calculation App.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.CONFIRM_PASSWORD_PLACEHOLDER">
+            <summary>
+              Looks up a localized string similar to Confirm password.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.CONFIRM_SIGN_UP_MESSAGE">
+            <summary>
+              Looks up a localized string similar to Thank you, You&apos;re registered to {0}.\n An email has been sent to you, please check it to verify your account..
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.COPYRIGHT_TEXT">
+            <summary>
+              Looks up a localized string similar to Copyright © Urszula Lis &amp; Piotr Makowiec.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.DETAILS_TITLE">
+            <summary>
+              Looks up a localized string similar to Details.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.EMAIL_PLACEHOLDER">
+            <summary>
+              Looks up a localized string similar to Email.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.EMAIL_REQUIRED">
+             <summary>
+               Looks up a localized string similar to Email is required !
+            .
+             </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.EQUOTION_CHOOSE">
+            <summary>
+              Looks up a localized string similar to Choose an equotion.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.ERROR_MESSAGE">
+            <summary>
+              Looks up a localized string similar to An error occurred while your request was being processed, please try again later..
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.FORGOT_PASSWORD_MESSAGE">
+            <summary>
+              Looks up a localized string similar to An email has been sent to you, please check it to update your password..
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.FORGOT_PASSWORD_TEXT">
+            <summary>
+              Looks up a localized string similar to Forgot Password.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.HOME_TITLE">
+            <summary>
+              Looks up a localized string similar to Home.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.INVALID_EMAIL_REQUIRED">
+             <summary>
+               Looks up a localized string similar to Invalid email address !
+            .
+             </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.KINETIC_TITLE">
+            <summary>
+              Looks up a localized string similar to Kinetic Energy Equation.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.LAGRANGE">
+            <summary>
+              Looks up a localized string similar to Lagrange Interpolation.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.MENU_TEXT">
+            <summary>
+              Looks up a localized string similar to Sample Menu.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.OK">
+            <summary>
+              Looks up a localized string similar to Ok.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.PASSWORD_CONFIRM_PASSWORD_REQUIRED">
+            <summary>
+              Looks up a localized string similar to Password does not match the confirm password..
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.PASSWORD_PLACEHOLDER">
+            <summary>
+              Looks up a localized string similar to Password.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.PASSWORD_REQUIRED">
+             <summary>
+               Looks up a localized string similar to Password is required !
+            .
+             </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.RESULT_TITLE">
+            <summary>
+              Looks up a localized string similar to Result.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.ROCKET">
+            <summary>
+              Looks up a localized string similar to Vertical movement of the rocket.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.SEND_TEXT">
+            <summary>
+              Looks up a localized string similar to Send.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.SIGN_IN_TEXT">
+            <summary>
+              Looks up a localized string similar to Sign In.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.SIGN_UP_TEXT">
+            <summary>
+              Looks up a localized string similar to Sign Up.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.Unknown_speed_unit">
+            <summary>
+              Looks up a localized string similar to Unknown speed unit.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.Unknown_weight_unit">
+            <summary>
+              Looks up a localized string similar to Unknown weight unit.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.USERNAME_PLACEHOLDER">
+            <summary>
+              Looks up a localized string similar to Username.
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.USERNAME_REQUIRED">
+             <summary>
+               Looks up a localized string similar to Username is required !
+            .
+             </summary>
+        </member>
+        <member name="T:MobileXamarin.Enums.EquationType">
+            <summary>
+            Types of equations
+            </summary>
+        </member>
+        <member name="F:MobileXamarin.Enums.EquationType.Kinetic">
+            <summary>
+            Kinetic energy equation
+            </summary>
+        </member>
+        <member name="F:MobileXamarin.Enums.EquationType.Lagrange">
+            <summary>
+            Lagrange Interpolation equation
+            </summary>
+        </member>
+        <member name="F:MobileXamarin.Enums.EquationType.Rocket">
+            <summary>
+            Vertical start of rocket equation
+            </summary>
+        </member>
+        <member name="F:MobileXamarin.Enums.EquationType.Unknown">
+            <summary>
+            Unknown equation
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.IModels.IEquation">
+            <summary>
+            Equation model interface
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IModels.IEquation.Name">
+            <summary>
+            Name of the equation
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IModels.IEquation.Image">
+            <summary>
+            Gets the image of that equation
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IModels.IEquation.EquationType">
+            <summary>
+            Type of equation
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.Models.Equation">
+            <summary>
+            Equation model
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Models.Equation.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:MobileXamarin.Models.Equation.EquationType">
+            <inheritdoc />
+        </member>
+        <member name="P:MobileXamarin.Models.Equation.Image">
+            <inheritdoc />
+        </member>
+        <member name="M:MobileXamarin.Models.Equation.#ctor(System.String,System.String,MobileXamarin.Enums.EquationType)">
+            <summary>
+            Constructor for equation model
+            </summary>
+            <param name="name">Name of the equation</param>
+            <param name="imageName">Image name which is in Assets for the equation</param>
+            <param name="type">Type of equation</param>
+        </member>
+        <member name="M:MobileXamarin.Models.Equation.ToString">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -20,11 +20,13 @@ namespace MobileXamarin.ViewModels
             SimpleIoc.Default.Register<IEquationRepository, EquationRepository>();
             SimpleIoc.Default.Register<IKineticEquotionResolver, KineticKineticEquotionResolver>();
             SimpleIoc.Default.Register<ILagrangeResolver, LagrangeResolver>();
+            SimpleIoc.Default.Register<IRocketEquationResolver, RocketEquationResolver>();
 
             SimpleIoc.Default.Register<IHomeViewModel, HomeViewModel>();
             SimpleIoc.Default.Register<IKineticEnergyEquationViewModel, KineticEnergyEquationViewModel>();
             SimpleIoc.Default.Register<IResultViewModel, ResultViewModel>();
             SimpleIoc.Default.Register<ILagrangeEquotionViewModel, LagrangeEquotionViewModel>();
+            SimpleIoc.Default.Register<IRocketEquationViewModel, RocketEquationViewModel>();
 
             SimpleIoc.Default.Register<IPopupsService, PopupsService>();
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
@@ -39,5 +41,7 @@ namespace MobileXamarin.ViewModels
         public IResultViewModel Result => ServiceLocator.Current.GetInstance<IResultViewModel>();
 
         public ILagrangeEquotionViewModel Lagrange => ServiceLocator.Current.GetInstance<ILagrangeEquotionViewModel>();
+
+        public IRocketEquationViewModel Rocket => ServiceLocator.Current.GetInstance<IRocketEquationViewModel>();
     }
 }

@@ -8,16 +8,29 @@ using Xamarin.Forms;
 
 namespace MobileXamarin.Models
 {
+    /// <summary>
+    /// Equation model
+    /// </summary>
     public class Equation : IEquation
     {
         private readonly string imageName;
+
+        /// <inheritdoc />
         public string Name { get; }
 
+        /// <inheritdoc />
         public EquationType EquationType { get; }
 
+        /// <inheritdoc />
         public ImageSource Image => ImageSource.FromResource($"MobileXamarin.AppResources.Assets.{imageName}");
 
 
+        /// <summary>
+        /// Constructor for equation model
+        /// </summary>
+        /// <param name="name">Name of the equation</param>
+        /// <param name="imageName">Image name which is in Assets for the equation</param>
+        /// <param name="type">Type of equation</param>
         public Equation(string name, string imageName, EquationType type)
         {
             this.imageName = imageName;
@@ -25,6 +38,7 @@ namespace MobileXamarin.Models
             EquationType = type;
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return Name;
