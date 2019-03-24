@@ -8,8 +8,19 @@ using MobileXamarin.Enums;
 
 namespace MobileXamarin.EquotionResolvers
 {
+    /// <summary>
+    /// Resolver for kinetic energy equation
+    /// </summary>
     public interface IKineticEquotionResolver
     {
+        /// <summary>
+        /// Resolves kinetic energy equation
+        /// </summary>
+        /// <param name="weight">Weight of the object</param>
+        /// <param name="weightUnit">Unit of object's weight</param>
+        /// <param name="speed">Speed of object</param>
+        /// <param name="speedUnit">Unit of object's speed</param>
+        /// <returns>Returns step by step in Latex format result of the equation resolving</returns>
         Task<IEnumerable<string>> Resolve(double weight, Units weightUnit, double speed, Units speedUnit);
     }
 }

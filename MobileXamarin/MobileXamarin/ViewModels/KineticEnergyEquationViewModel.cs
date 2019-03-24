@@ -16,6 +16,9 @@ using Xamarin.Forms.Navigation;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Kinetic Energy Equation ViewModel
+    /// </summary>
     public class KineticEnergyEquationViewModel : EquationViewModelBase, IKineticEnergyEquationViewModel
     {
         private readonly IKineticEquotionResolver resolver;
@@ -25,6 +28,7 @@ namespace MobileXamarin.ViewModels
         private string selectedWeightUnit;
         private string selectedSpeedUnit;
 
+        /// <inheritdoc />
         public double Weight
         {
             get => weight;
@@ -38,6 +42,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double Speed
         {
             get => speed;
@@ -51,10 +56,17 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets all units for the weight
+        /// </summary>
         public ObservableCollection<string> WeightUnits { get; set; }
 
+        /// <summary>
+        /// Gets or sets all units for the speed
+        /// </summary>
         public ObservableCollection<string> SpeedUnits { get; set; }
 
+        /// <inheritdoc />
         public string SelectedWeightUnit
         {
             get => selectedWeightUnit;
@@ -68,6 +80,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public string SelectedSpeedUnit
         {
             get => selectedSpeedUnit;
@@ -81,6 +94,12 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <summary>
+        /// Constructor for KineticEnergyEquationViewModel
+        /// </summary>
+        /// <param name="resolver">Resolver for kinetic energy equation <see cref="IKineticEquotionResolver"/></param>
+        /// <param name="navigationService">Navigation service <see cref="INavigationService"/></param>
+        /// <param name="messenger">Messenger <see cref="IMessenger"/></param>
         public KineticEnergyEquationViewModel(
             IKineticEquotionResolver resolver,
             INavigationService navigationService,
@@ -114,6 +133,7 @@ namespace MobileXamarin.ViewModels
             SelectedWeightUnit = UnitRepository.GetStringByUnit(Units.Kilogram);
         }
 
+        /// <inheritdoc />
         protected override bool ResolveCanExecute()
         {
             if (!string.IsNullOrEmpty(SelectedWeightUnit) && !string.IsNullOrEmpty(SelectedSpeedUnit))
@@ -124,6 +144,7 @@ namespace MobileXamarin.ViewModels
             return false;
         }
 
+        /// <inheritdoc />
         protected override async Task ResolveExecute()
         {
             var weightUnit = UnitRepository.GetUnitByString(SelectedWeightUnit);

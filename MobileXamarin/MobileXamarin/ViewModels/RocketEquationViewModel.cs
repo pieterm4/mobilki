@@ -8,6 +8,9 @@ using MobileXamarin.IViewModels;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Rocket equation viewmodel
+    /// </summary>
     public class RocketEquationViewModel : EquationViewModelBase, IRocketEquationViewModel
     {
         private double massOfTheRocket;
@@ -15,6 +18,7 @@ namespace MobileXamarin.ViewModels
         private double flightTime;
         private double properImpulse;
 
+        /// <inheritdoc />
         public double MassOfTheRocket
         {
             get => massOfTheRocket;
@@ -28,6 +32,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double MassOfTheFuel
         {
             get => massOfTheFuel;
@@ -41,6 +46,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double FlightTime
         {
             get => flightTime;
@@ -54,6 +60,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double ProperImpulse
         {
             get => properImpulse;
@@ -67,11 +74,13 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         protected override bool ResolveCanExecute()
         {
             throw new System.NotImplementedException();
         }
 
+        /// <inheritdoc />
         protected override async Task ResolveExecute()
         {
             throw new System.NotImplementedException();

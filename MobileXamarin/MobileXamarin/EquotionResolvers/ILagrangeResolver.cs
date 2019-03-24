@@ -4,6 +4,9 @@
 
 namespace MobileXamarin.EquotionResolvers
 {
+    /// <summary>
+    /// Resolver for Lagrange interpolation equation
+    /// </summary>
     public interface ILagrangeResolver
     {
         

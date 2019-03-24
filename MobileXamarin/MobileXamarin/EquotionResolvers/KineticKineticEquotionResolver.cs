@@ -11,8 +11,10 @@ using MobileXamarin.Enums;
 
 namespace MobileXamarin.EquotionResolvers
 {
+    /// <inheritdoc />
     public class KineticKineticEquotionResolver : IKineticEquotionResolver
     {
+        /// <inheritdoc />
         public async Task<IEnumerable<string>> Resolve(double weight, Units weightUnit, double speed, Units speedUnit)
         {
             var result = new List<string>();

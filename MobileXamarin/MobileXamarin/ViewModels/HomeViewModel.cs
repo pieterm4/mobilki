@@ -10,10 +10,16 @@ using INavigationService = Xamarin.Forms.Navigation.INavigationService;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Home view model <see cref="IHomeViewModel"/>
+    /// </summary>
     public class HomeViewModel : BaseViewModel, IHomeViewModel
     {
         private IEquation selectedEquation;
 
+        /// <summary>
+        /// Selected equation from the list
+        /// </summary>
         public IEquation SelectedEquation
         {
             get => selectedEquation;
@@ -28,10 +34,19 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public IEnumerable<IEquation> Equations { get; }
 
+        /// <summary>
+        /// Command for navigating to the next page when equation has been selected
+        /// </summary>
         public RelayCommand NextPageCommand { get; }
 
+        /// <summary>
+        /// Constructor for HomeViewModel
+        /// </summary>
+        /// <param name="equationRepository">Equation repository <see cref="IEquationRepository"/></param>
+        /// <param name="navigationService">Navigation service <see cref="INavigationService"/></param>
         public HomeViewModel(IEquationRepository equationRepository, INavigationService navigationService)
         {
             Equations = equationRepository.GetEquations();

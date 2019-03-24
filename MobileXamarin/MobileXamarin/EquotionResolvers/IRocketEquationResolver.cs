@@ -4,6 +4,9 @@
 
 namespace MobileXamarin.EquotionResolvers
 {
+    /// <summary>
+    /// Resolver for vertical rocket start equation
+    /// </summary>
     public interface IRocketEquationResolver
     {
         

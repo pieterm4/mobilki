@@ -8,17 +8,32 @@ using MobileXamarin.IViewModels;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Abstract base class for equation view models
+    /// </summary>
     public abstract class EquationViewModelBase : BaseViewModel, IEquationViewModelBase
     {
+        /// <inheritdoc />
         public RelayCommand Resolve { get; }
 
+        /// <summary>
+        /// Constructor for base class for equation view models
+        /// </summary>
         protected EquationViewModelBase()
         {
             Resolve = new RelayCommand(async () => await ResolveExecute(), ResolveCanExecute);
         }
 
+        /// <summary>
+        /// Determines if can execute Resolve command
+        /// </summary>
+        /// <returns>True when can execute Resolve command, False if not</returns>
         protected abstract bool ResolveCanExecute();
 
+        /// <summary>
+        /// Executes Resolve command
+        /// </summary>
+        /// <returns>Task which execute command</returns>
         protected abstract Task ResolveExecute();
     }
 }

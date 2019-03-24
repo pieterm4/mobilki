@@ -14,6 +14,9 @@ using MobileXamarin.IViewModels;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Lagrange interpolation viewmodel
+    /// </summary>
     public class LagrangeEquotionViewModel : EquationViewModelBase, ILagrangeEquotionViewModel
     {
         private readonly ILagrangeResolver resolver;
@@ -22,6 +25,7 @@ namespace MobileXamarin.ViewModels
         private double newX;
         private double newY;
 
+        /// <inheritdoc />
         public ObservableCollection<Point> ControlPoints
         {
             get => controlPoints;
@@ -37,6 +41,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double NewX
         {
             get => newX;
@@ -51,6 +56,7 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public double NewY
         {
             get => newY;
@@ -65,9 +71,17 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public RelayCommand AddControlPointCommand { get; set; }
+
+        /// <inheritdoc />
         public RelayCommand RemoveControlPointCommand { get; set; }
 
+        /// <summary>
+        /// Constructor for LagrangeEquationViewModel
+        /// </summary>
+        /// <param name="resolver">Lagrange interpolation equation resolver <see cref="ILagrangeResolver"/></param>
+        /// <param name="messenger">Messenger <see cref="IMessenger"/></param>
         public LagrangeEquotionViewModel(ILagrangeResolver resolver, IMessenger messenger)
         {
             this.resolver = resolver;
@@ -99,11 +113,13 @@ namespace MobileXamarin.ViewModels
             throw new System.NotImplementedException();
         }
 
+        /// <inheritdoc />
         protected override bool ResolveCanExecute()
         {
             return ControlPoints.Count > 1;
         }
 
+        /// <inheritdoc />
         protected override async Task ResolveExecute()
         {
             throw new System.NotImplementedException();

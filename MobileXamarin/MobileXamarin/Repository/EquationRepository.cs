@@ -9,10 +9,14 @@ using MobileXamarin.Models;
 
 namespace MobileXamarin.Repository
 {
+    /// <inheritdoc />
     public class EquationRepository : IEquationRepository
     {
         private readonly IEnumerable<IEquation> equations;
 
+        /// <summary>
+        /// Constructor for Equation repository
+        /// </summary>
         public EquationRepository()
         {
             equations = Initialize();
@@ -28,6 +32,7 @@ namespace MobileXamarin.Repository
             };
         }
 
+        /// <inheritdoc />
         public IEnumerable<IEquation> GetEquations()
         {
             return equations;

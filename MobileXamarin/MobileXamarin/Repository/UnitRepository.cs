@@ -8,6 +8,9 @@ using MobileXamarin.Enums;
 
 namespace MobileXamarin.Repository
 {
+    /// <summary>
+    /// Repository for units
+    /// </summary>
     public static class UnitRepository
     {
         private static IDictionary<Units, string> unitRepresentation;
@@ -27,6 +30,11 @@ namespace MobileXamarin.Repository
             };
         }
 
+        /// <summary>
+        /// Get string unit representation based on its enum value
+        /// </summary>
+        /// <param name="unit">Enum for unit</param>
+        /// <returns>String representation for unit, if doesn't exist - returns empty string</returns>
         public static string GetStringByUnit(Units unit)
         {
             Initialize();
@@ -35,6 +43,11 @@ namespace MobileXamarin.Repository
             return canGetValue ? representation : string.Empty;
         }
 
+        /// <summary>
+        /// Get enum unit based on the string representation
+        /// </summary>
+        /// <param name="unitString">String representation of the unit</param>
+        /// <returns>Enum representation of the unit</returns>
         public static Units GetUnitByString(string unitString)
         {
             Initialize();

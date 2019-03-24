@@ -18,6 +18,9 @@ using Xamarin.Forms.Popups;
 
 namespace MobileXamarin.ViewModels
 {
+    /// <summary>
+    /// Result viewmodel
+    /// </summary>
     public class ResultViewModel : BaseViewModel, IResultViewModel
     {
         private readonly IMessenger messenger;
@@ -25,6 +28,7 @@ namespace MobileXamarin.ViewModels
         private readonly SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
         private ObservableCollection<MathSource> result;
 
+        /// <inheritdoc />
         public ObservableCollection<MathSource> Result
         {
             get => result;
@@ -38,8 +42,15 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        /// <inheritdoc />
         public RelayCommand Finish { get; set; }
 
+        /// <summary>
+        /// Constructor for ResultViewModel
+        /// </summary>
+        /// <param name="navigationService">Navigation service <see cref="INavigationService"/></param>
+        /// <param name="popupsService">Popup service <see cref="IPopupsService"/></param>
+        /// <param name="messenger">Messenger <see cref="IMessenger"/></param>
         public ResultViewModel(
             INavigationService navigationService,
             IPopupsService popupsService,
@@ -91,12 +102,17 @@ namespace MobileXamarin.ViewModels
             return NavigationService.GetParameters().GetValue<IEnumerable<string>>("Result");
         }
 
+        /// <inheritdoc />
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Dispose this when it's not whi;e disposing
+        /// </summary>
+        /// <param name="disposing">Is disposing</param>
         protected virtual void Dispose(bool disposing)
         {
             if (disposed)
