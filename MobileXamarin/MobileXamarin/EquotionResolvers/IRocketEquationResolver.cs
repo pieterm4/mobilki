@@ -17,6 +17,6 @@ namespace MobileXamarin.EquotionResolvers
         /// </summary>
         /// <param name="rocketParameter">Parameters of the rocket</param>
         /// <returns></returns>
-        Task<RocketEquationResult> Resolve(RocketParameter rocketParameter);
+        Task<Result> Resolve(RocketParameter rocketParameter);
     }
 }

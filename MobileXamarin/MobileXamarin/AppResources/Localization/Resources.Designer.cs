@@ -298,6 +298,15 @@ namespace MobileXamarin.AppResources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unknown time unit.
+        /// </summary>
+        internal static string Unknown_time_unit {
+            get {
+                return ResourceManager.GetString("Unknown_time_unit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown weight unit.
         /// </summary>
         internal static string Unknown_weight_unit {

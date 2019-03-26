@@ -5,11 +5,13 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using MobileXamarin.Enums;
 using MobileXamarin.EquotionResolvers;
 using MobileXamarin.IViewModels;
+using MobileXamarin.Models;
 using MobileXamarin.Repository;
 using MobileXamarin.Views;
 using Xamarin.Forms.Navigation;

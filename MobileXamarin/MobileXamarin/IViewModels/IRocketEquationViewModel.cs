@@ -32,6 +32,11 @@ namespace MobileXamarin.IViewModels
         double ProperImpulse { get; set; }
 
         /// <summary>
+        /// Amount of thrown fuel away for period of time eg kg/s
+        /// </summary>
+        double AmountOfThrownFuel { get; set; }
+
+        /// <summary>
         /// Gets or sets units for mass of the rocket
         /// </summary>
         ObservableCollection<string> MassOfTheRocketUnits { get; set; }
@@ -52,6 +57,11 @@ namespace MobileXamarin.IViewModels
         ObservableCollection<string> ProperImpulseUnits { get; set; }
 
         /// <summary>
+        /// Gets or sets units for amount of thrown fuel
+        /// </summary>
+        ObservableCollection<string> AmountOfThrownFuelUnits { get; set; }
+
+        /// <summary>
         /// Selected unit for mass of the rocket
         /// </summary>
         string SelectedMassOfTheRocketUnit { get; set; }
@@ -70,5 +80,10 @@ namespace MobileXamarin.IViewModels
         /// Selected unit for the proper impulse
         /// </summary>
         string SelectedProperImpulseUnit { get; set; }
+
+        /// <summary>
+        /// Unit for thrown fuel away eg. kg/s
+        /// </summary>
+        string SelectedAmountOfThrownFuelUnit { get; set; }
     }
 }

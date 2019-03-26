@@ -50,6 +50,11 @@ namespace MobileXamarin.Enums
         Gram,
 
         /// <summary>
+        /// Kilogram per second [kg/s]
+        /// </summary>
+        KilogramPerSecond,
+
+        /// <summary>
         /// Celsius [C]
         /// </summary>
         Celsius,

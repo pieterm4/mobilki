@@ -52,6 +52,16 @@ namespace MobileXamarin.Models
         public Units FlightTimeUnit { get; }
 
         /// <summary>
+        /// Amount of thrown fuel in period of time eg every second [kg/s]
+        /// </summary>
+        public double AmountOfThrownFuel { get; }
+
+        /// <summary>
+        /// Unit for thrown fuel
+        /// </summary>
+        public Units AmountOfThrownFuelUnit { get; }
+
+        /// <summary>
         /// Parameters of the rocket
         /// </summary>
         /// <param name="massOfTheRocket">Mass of the rocket</param>
@@ -62,7 +72,19 @@ namespace MobileXamarin.Models
         /// <param name="properImpulseUnit">Proper impulse unit</param>
         /// <param name="flightTime">Flight time</param>
         /// <param name="flightTimeUnit">Flight time unit</param>
-        public RocketParameter(double massOfTheRocket, Units massOfTheRocketUnit, double massOfTheFuel, Units massOfTheFuelUnit, double properImpulse, Units properImpulseUnit, double flightTime, Units flightTimeUnit)
+        /// <param name="amountOfThrownFuel">Amount of thrown fuel in period of time eg every second [kg/s]</param>
+        /// <param name="amountOfThrownFuelUnit">Unit for thrown fuel</param>
+        public RocketParameter(
+            double massOfTheRocket,
+            Units massOfTheRocketUnit,
+            double massOfTheFuel,
+            Units massOfTheFuelUnit,
+            double properImpulse,
+            Units properImpulseUnit,
+            double flightTime,
+            Units flightTimeUnit,
+            double amountOfThrownFuel,
+            Units amountOfThrownFuelUnit)
         {
             MassOfTheRocket = massOfTheRocket;
             MassOfTheRocketUnit = massOfTheRocketUnit;
@@ -72,6 +94,8 @@ namespace MobileXamarin.Models
             ProperImpulseUnit = properImpulseUnit;
             FlightTime = flightTime;
             FlightTimeUnit = flightTimeUnit;
+            AmountOfThrownFuel = amountOfThrownFuel;
+            AmountOfThrownFuelUnit = amountOfThrownFuelUnit;
         }
     }
 }

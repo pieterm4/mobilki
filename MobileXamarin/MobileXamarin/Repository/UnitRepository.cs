@@ -26,7 +26,8 @@ namespace MobileXamarin.Repository
                 {Units.Meter, "m" },
                 {Units.KilometerPerHour, "Km/h" },
                 {Units.MeterForSecond, "m/s" },
-                {Units.Second, "s" }
+                {Units.Second, "s" },
+                {Units.KilogramPerSecond, "kg/s" }
             };
         }
 

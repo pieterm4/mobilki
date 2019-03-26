@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:extensions="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
              xmlns:math="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="MobileXamarin.Views.ResultView"
              Title="{extensions:Translate Key=RESULT_TITLE}" 
              BindingContext="{Binding Result, Source={StaticResource Locator}}">
@@ -11,11 +12,12 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Text="Result" Margin="10, 20, 10, 0" FontSize="Large"/>
             <ScrollView Grid.Row="1" Margin="10, 20, 10, 0">
-                <ListView ItemsSource="{Binding Result, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView ItemsSource="{Binding Solution, Mode=TwoWay}" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -25,7 +27,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollView>
-            <Button Command="{Binding Finish}"  Grid.Row="2"  Text="Finish" HorizontalOptions="CenterAndExpand"  />
+            <microcharts:ChartView Grid.Row="2" x:Name="Chart" Margin="0, 10, 0, 10" Chart="{Binding Chart, Mode=TwoWay}" />
+
+            <Button Command="{Binding Finish}"  Grid.Row="3"  Text="Finish" HorizontalOptions="CenterAndExpand"  />
         </Grid>
 
     </ContentPage.Content>

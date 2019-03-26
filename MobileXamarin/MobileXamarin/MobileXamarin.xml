@@ -153,6 +153,11 @@
               Looks up a localized string similar to Unknown speed unit.
             </summary>
         </member>
+        <member name="P:MobileXamarin.AppResources.Localization.Resources.Unknown_time_unit">
+            <summary>
+              Looks up a localized string similar to Unknown time unit.
+            </summary>
+        </member>
         <member name="P:MobileXamarin.AppResources.Localization.Resources.Unknown_weight_unit">
             <summary>
               Looks up a localized string similar to Unknown weight unit.
@@ -239,6 +244,11 @@
             Gram [g]
             </summary>
         </member>
+        <member name="F:MobileXamarin.Enums.Units.KilogramPerSecond">
+            <summary>
+            Kilogram per second [kg/s]
+            </summary>
+        </member>
         <member name="F:MobileXamarin.Enums.Units.Celsius">
             <summary>
             Celsius [C]
@@ -291,6 +301,38 @@
         </member>
         <member name="M:MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
             <inheritdoc />
+        </member>
+        <member name="T:MobileXamarin.EquotionResolvers.Normalization">
+            <summary>
+            Normalization class
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeSpeed(System.Double,MobileXamarin.Enums.Units)">
+            <summary>
+            Normalizes speed to meter per second
+            </summary>
+            <param name="speed">Speed value</param>
+            <param name="speedUnit">Speed unit</param>
+            <returns>Speed in meter for second unit</returns>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
+        </member>
+        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeWeight(System.Double,MobileXamarin.Enums.Units)">
+            <summary>
+            Normalizes weight to kilograms
+            </summary>
+            <param name="weight">Weight value</param>
+            <param name="weightUnit">Weight unit</param>
+            <returns>Weight in kilograms</returns>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
+        </member>
+        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeTime(System.Double,MobileXamarin.Enums.Units)">
+            <summary>
+            Normalizes time to seconds
+            </summary>
+            <param name="time">Time value</param>
+            <param name="timeUnit">Time unit</param>
+            <returns>Time in seconds</returns>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
         </member>
         <member name="T:MobileXamarin.EquotionResolvers.RocketEquationResolver">
             <inheritdoc />
@@ -398,9 +440,14 @@
             Result viewmodel
             </summary>
         </member>
-        <member name="P:MobileXamarin.IViewModels.IResultViewModel.Result">
+        <member name="P:MobileXamarin.IViewModels.IResultViewModel.Solution">
             <summary>
             Gets or sets collection of step results for the equation in MathSource type to display math symbols correctly
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IViewModels.IResultViewModel.ControlPoints">
+            <summary>
+            Control points for chart
             </summary>
         </member>
         <member name="P:MobileXamarin.IViewModels.IResultViewModel.Finish">
@@ -433,6 +480,11 @@
             Gets or sets value of how much fuel is throwing out from the rocket
             </summary>
         </member>
+        <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.AmountOfThrownFuel">
+            <summary>
+            Amount of thrown fuel away for period of time eg kg/s
+            </summary>
+        </member>
         <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.MassOfTheRocketUnits">
             <summary>
             Gets or sets units for mass of the rocket
@@ -453,6 +505,11 @@
             Gets or sets units for the proper impulse
             </summary>
         </member>
+        <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.AmountOfThrownFuelUnits">
+            <summary>
+            Gets or sets units for amount of thrown fuel
+            </summary>
+        </member>
         <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.SelectedMassOfTheRocketUnit">
             <summary>
             Selected unit for mass of the rocket
@@ -471,6 +528,11 @@
         <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.SelectedProperImpulseUnit">
             <summary>
             Selected unit for the proper impulse
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IViewModels.IRocketEquationViewModel.SelectedAmountOfThrownFuelUnit">
+            <summary>
+            Unit for thrown fuel away eg. kg/s
             </summary>
         </member>
         <member name="T:MobileXamarin.Models.Equation">
@@ -498,27 +560,52 @@
         <member name="M:MobileXamarin.Models.Equation.ToString">
             <inheritdoc />
         </member>
-        <member name="T:MobileXamarin.Models.RocketEquationResult">
+        <member name="T:MobileXamarin.Models.Point">
+            <summary>
+            Point with double points
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Models.Point.X">
+            <summary>
+            X value
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Models.Point.Y">
+            <summary>
+            Y value
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Models.Point.#ctor(System.Double,System.Double)">
+            <summary>
+            Point constructor
+            </summary>
+            <param name="x">X value</param>
+            <param name="y">Y value</param>
+        </member>
+        <member name="M:MobileXamarin.Models.Point.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:MobileXamarin.Models.Result">
             <summary>
             Result of rocket equation resolver
             </summary>
         </member>
-        <member name="P:MobileXamarin.Models.RocketEquationResult.ControlPoints">
+        <member name="P:MobileXamarin.Models.Result.ControlPoints">
             <summary>
             Control points for the chart
             </summary>
         </member>
-        <member name="P:MobileXamarin.Models.RocketEquationResult.Result">
+        <member name="P:MobileXamarin.Models.Result.Solution">
             <summary>
             Latex representation of the velocity at the end of the rocket's flight time
             </summary>
         </member>
-        <member name="M:MobileXamarin.Models.RocketEquationResult.#ctor(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.String)">
+        <member name="M:MobileXamarin.Models.Result.#ctor(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point},System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Constructor for Rocket EquationResult
             </summary>
             <param name="controlPoints">Control points for chart</param>
-            <param name="result">Latex representation of the velocity at the end of the rocket's flight</param>
+            <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
         </member>
         <member name="T:MobileXamarin.Models.RocketParameter">
             <summary>
@@ -565,7 +652,17 @@
             Gets flight time unit
             </summary>
         </member>
-        <member name="M:MobileXamarin.Models.RocketParameter.#ctor(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
+        <member name="P:MobileXamarin.Models.RocketParameter.AmountOfThrownFuel">
+            <summary>
+            Amount of thrown fuel in period of time eg every second [kg/s]
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Models.RocketParameter.AmountOfThrownFuelUnit">
+            <summary>
+            Unit for thrown fuel
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Models.RocketParameter.#ctor(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
             <summary>
             Parameters of the rocket
             </summary>
@@ -577,6 +674,8 @@
             <param name="properImpulseUnit">Proper impulse unit</param>
             <param name="flightTime">Flight time</param>
             <param name="flightTimeUnit">Flight time unit</param>
+            <param name="amountOfThrownFuel">Amount of thrown fuel in period of time eg every second [kg/s]</param>
+            <param name="amountOfThrownFuelUnit">Unit for thrown fuel</param>
         </member>
         <member name="T:MobileXamarin.Repository.EquationRepository">
             <inheritdoc />
@@ -774,7 +873,10 @@
             Result viewmodel
             </summary>
         </member>
-        <member name="P:MobileXamarin.ViewModels.ResultViewModel.Result">
+        <member name="P:MobileXamarin.ViewModels.ResultViewModel.Solution">
+            <inheritdoc />
+        </member>
+        <member name="P:MobileXamarin.ViewModels.ResultViewModel.ControlPoints">
             <inheritdoc />
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.Finish">
@@ -814,6 +916,9 @@
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.ProperImpulse">
             <inheritdoc />
         </member>
+        <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.AmountOfThrownFuel">
+            <inheritdoc />
+        </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedMassOfTheRocketUnit">
             <inheritdoc />
         </member>
@@ -826,6 +931,9 @@
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedProperImpulseUnit">
             <inheritdoc />
         </member>
+        <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedAmountOfThrownFuelUnit">
+            <inheritdoc />
+        </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.MassOfTheRocketUnits">
             <inheritdoc />
         </member>
@@ -836,6 +944,9 @@
             <inheritdoc />
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.ProperImpulseUnits">
+            <inheritdoc />
+        </member>
+        <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.AmountOfThrownFuelUnits">
             <inheritdoc />
         </member>
         <member name="M:MobileXamarin.ViewModels.RocketEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.IRocketEquationResolver,Xamarin.Forms.Navigation.INavigationService,GalaSoft.MvvmLight.Messaging.IMessenger)">

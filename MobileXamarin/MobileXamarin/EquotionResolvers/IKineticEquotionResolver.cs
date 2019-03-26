@@ -2,9 +2,9 @@
 // All rights reserved
 // Piotr Makowiec 18-03-2019
 
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using MobileXamarin.Enums;
+using MobileXamarin.Models;
 
 namespace MobileXamarin.EquotionResolvers
 {
@@ -21,6 +21,6 @@ namespace MobileXamarin.EquotionResolvers
         /// <param name="speed">Speed of object</param>
         /// <param name="speedUnit">Unit of object's speed</param>
         /// <returns>Returns step by step in Latex format result of the equation resolving</returns>
-        Task<IEnumerable<string>> Resolve(double weight, Units weightUnit, double speed, Units speedUnit);
+        Task<Result> Resolve(double weight, Units weightUnit, double speed, Units speedUnit);
     }
 }

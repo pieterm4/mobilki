@@ -12,6 +12,7 @@ using MobileXamarin.EquotionResolvers;
 using MobileXamarin.IViewModels;
 using MobileXamarin.Models;
 using MobileXamarin.Repository;
+using MobileXamarin.Views;
 using Xamarin.Forms.Navigation;
 
 namespace MobileXamarin.ViewModels
@@ -31,6 +32,8 @@ namespace MobileXamarin.ViewModels
         private string selectedMassOfTheFuelUnit;
         private string selectedFlightTimeUnit;
         private string selectedProperImpulseUnit;
+        private string selectedAmountOfThrownFuelUnit;
+        private double amountOfThrownFuel;
 
         /// <inheritdoc />
         public double MassOfTheRocket
@@ -84,6 +87,20 @@ namespace MobileXamarin.ViewModels
                 {
                     properImpulse = value;
                     OnPropertyChanged(nameof(ProperImpulse));
+                }
+            }
+        }
+
+        /// <inheritdoc />
+        public double AmountOfThrownFuel
+        {
+            get => amountOfThrownFuel;
+            set
+            {
+                if (Math.Abs(amountOfThrownFuel - value) > double.Epsilon)
+                {
+                    amountOfThrownFuel = value;
+                    OnPropertyChanged(nameof(AmountOfThrownFuel));
                 }
             }
         }
@@ -145,6 +162,20 @@ namespace MobileXamarin.ViewModels
         }
 
         /// <inheritdoc />
+        public string SelectedAmountOfThrownFuelUnit
+        {
+            get => selectedAmountOfThrownFuelUnit;
+            set
+            {
+                if (selectedAmountOfThrownFuelUnit != value)
+                {
+                    selectedAmountOfThrownFuelUnit = value;
+                    OnPropertyChanged(nameof(SelectedAmountOfThrownFuelUnit));
+                }
+            }
+        }
+
+        /// <inheritdoc />
         public ObservableCollection<string> MassOfTheRocketUnits { get; set; }
 
         /// <inheritdoc />
@@ -155,6 +186,11 @@ namespace MobileXamarin.ViewModels
 
         /// <inheritdoc />
         public ObservableCollection<string> ProperImpulseUnits { get; set; }
+
+        /// <inheritdoc />
+        public ObservableCollection<string> AmountOfThrownFuelUnits { get; set; }
+
+
 
         /// <summary>
         /// Constructor for RocketEquationViewModel
@@ -178,13 +214,11 @@ namespace MobileXamarin.ViewModels
         {
             var massOfTheRocketUnits = new List<string>
             {
-                UnitRepository.GetStringByUnit(Units.Gram),
                 UnitRepository.GetStringByUnit(Units.Kilogram)
             };
 
             var massOfTheFuelUnits = new List<string>
             {
-                UnitRepository.GetStringByUnit(Units.Gram),
                 UnitRepository.GetStringByUnit(Units.Kilogram)
             };
 
@@ -200,15 +234,22 @@ namespace MobileXamarin.ViewModels
                 UnitRepository.GetStringByUnit(Units.MeterForSecond)
             };
 
+            var amountOfThrownFuelUnits = new List<string>
+            {
+                UnitRepository.GetStringByUnit(Units.KilogramPerSecond)
+            };
+
             MassOfTheRocketUnits = new ObservableCollection<string>(massOfTheRocketUnits);
             MassOfTheFuelUnits = new ObservableCollection<string>(massOfTheFuelUnits);
             FlightTimeUnits = new ObservableCollection<string>(flightTimeUnits);
             ProperImpulseUnits = new ObservableCollection<string>(properImpulseUnits);
+            AmountOfThrownFuelUnits = new ObservableCollection<string>(amountOfThrownFuelUnits);
 
             SelectedMassOfTheRocketUnit = UnitRepository.GetStringByUnit(Units.Kilogram);
             SelectedFlightTimeUnit = UnitRepository.GetStringByUnit(Units.Second);
             SelectedMassOfTheFuelUnit = UnitRepository.GetStringByUnit(Units.Kilogram);
             SelectedProperImpulseUnit = UnitRepository.GetStringByUnit(Units.MeterForSecond);
+            SelectedAmountOfThrownFuelUnit = UnitRepository.GetStringByUnit(Units.KilogramPerSecond);
         }
 
         /// <inheritdoc />
@@ -217,7 +258,8 @@ namespace MobileXamarin.ViewModels
             if (!string.IsNullOrEmpty(SelectedMassOfTheRocketUnit) &&
                 !string.IsNullOrEmpty(SelectedMassOfTheFuelUnit) &&
                 !string.IsNullOrEmpty(SelectedProperImpulseUnit) &&
-                !string.IsNullOrEmpty(SelectedFlightTimeUnit))
+                !string.IsNullOrEmpty(SelectedFlightTimeUnit) &&
+                !string.IsNullOrEmpty(SelectedAmountOfThrownFuelUnit))
             {
                 return true;
             }
@@ -232,10 +274,20 @@ namespace MobileXamarin.ViewModels
             var massOfTheFuelUnit = UnitRepository.GetUnitByString(SelectedMassOfTheFuelUnit);
             var properImpulseUnit = UnitRepository.GetUnitByString(SelectedProperImpulseUnit);
             var flightTimeUnit = UnitRepository.GetUnitByString(SelectedFlightTimeUnit);
+            var amountOfThrownFuelUnit = UnitRepository.GetUnitByString(SelectedAmountOfThrownFuelUnit);
             var rocketParameter = new RocketParameter(MassOfTheRocket, massOfTheRocketUnit, MassOfTheFuel,
-                massOfTheFuelUnit, ProperImpulse, properImpulseUnit, FlightTime, flightTimeUnit);
+                massOfTheFuelUnit, ProperImpulse, properImpulseUnit, FlightTime, flightTimeUnit, AmountOfThrownFuel, amountOfThrownFuelUnit);
 
             var result = await resolver.Resolve(rocketParameter);
+
+            var parameters = new NavigationParameters
+            {
+                {"Result", result}
+            };
+
+            messenger.Send(result);
+
+            await NavigationService.NavigateTo(nameof(ResultView), parameters, true);
         }
     }
 }

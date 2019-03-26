@@ -5,14 +5,17 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using CSharpMath.Rendering;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using Microcharts;
 using Microsoft.Win32.SafeHandles;
 using MobileXamarin.IViewModels;
+using MobileXamarin.Models;
+using SkiaSharp;
 using Xamarin.Forms.Navigation;
 using Xamarin.Forms.Popups;
 
@@ -26,18 +29,35 @@ namespace MobileXamarin.ViewModels
         private readonly IMessenger messenger;
         private bool disposed = false;
         private readonly SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
-        private ObservableCollection<MathSource> result;
+        private ObservableCollection<MathSource> solution;
+        private Chart chart;
 
         /// <inheritdoc />
-        public ObservableCollection<MathSource> Result
+        public ObservableCollection<MathSource> Solution
         {
-            get => result;
+            get => solution;
             set
             {
-                if (result != value)
+                if (solution != value)
                 {
-                    result = value;
-                    OnPropertyChanged(nameof(Result));
+                    solution = value;
+                    OnPropertyChanged(nameof(Solution));
+                }
+            }
+        }
+
+        /// <inheritdoc />
+        public ObservableCollection<Point> ControlPoints { get; set; }
+
+        public Chart Chart
+        {
+            get => chart;
+            set
+            {
+                if (chart != value)
+                {
+                    chart = value;
+                    OnPropertyChanged(nameof(Chart));
                 }
             }
         }
@@ -60,17 +80,44 @@ namespace MobileXamarin.ViewModels
             NavigationService = navigationService;
             PopupService = popupsService;
             Finish = new RelayCommand(async () => await FinishExecute(), CanFinishExecute);
-            this.messenger.Register<IEnumerable<string>>(this, OnGetMessage);
-            Result = new ObservableCollection<MathSource>();
+            this.messenger.Register<Result>(this, OnGetMessage);
+            Solution = new ObservableCollection<MathSource>();
+            ControlPoints = new ObservableCollection<Point>();
+            Chart = new LineChart()
+            {
+                LineMode = LineMode.Straight,
+                PointSize = 18,
+                
+            };
             SetupResult();
+
+            SetupChartEntries();
+        }
+
+        private void SetupChartEntries()
+        {
+            var entries = new List<Entry>();
+            foreach (var controlPoint in ControlPoints)
+            {
+                var entry = new Entry((float) controlPoint.Y)
+                    {Color = new SKColor(255, 160, 200), Label = controlPoint.X.ToString(CultureInfo.InvariantCulture)};
+                entries.Add(entry);
+            }
+
+            Chart.Entries = entries;
         }
 
         private void SetupResult()
         {
-            var parameters = GetResult().ToList();
-            foreach (var parameter in parameters)
+            var result = GetResult();
+            foreach (var value in result.Solution)
             {
-                Result.Add(new MathSource(parameter));
+                Solution.Add(new MathSource(value));
+            }
+
+            foreach (var resultControlPoint in result.ControlPoints)
+            {
+                ControlPoints.Add(resultControlPoint);
             }
         }
 
@@ -88,18 +135,26 @@ namespace MobileXamarin.ViewModels
             return true;
         }
 
-        private void OnGetMessage(IEnumerable<string> obj)
+        private void OnGetMessage(Result result)
         {
-            Result.Clear();
-            foreach (var variable in obj)
+            Solution.Clear();
+            ControlPoints.Clear();
+            foreach (var value in result.Solution)
             {
-                Result.Add(new MathSource(variable));
+                Solution.Add(new MathSource(value));
             }
+
+            foreach (var resultControlPoint in result.ControlPoints)
+            {
+                ControlPoints.Add(resultControlPoint);
+            }
+
+            SetupChartEntries();
         }
 
-        private IEnumerable<string> GetResult()
+        private Result GetResult()
         {
-            return NavigationService.GetParameters().GetValue<IEnumerable<string>>("Result");
+            return NavigationService.GetParameters().GetValue<Result>("Result");
         }
 
         /// <inheritdoc />
