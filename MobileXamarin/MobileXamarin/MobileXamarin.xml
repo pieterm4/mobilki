@@ -370,6 +370,11 @@
             Gets command for resolving equation
             </summary>
         </member>
+        <member name="P:MobileXamarin.IViewModels.IEquationViewModelBase.IsBusy">
+            <summary>
+            Indicates when to show busy indication
+            </summary>
+        </member>
         <member name="T:MobileXamarin.IViewModels.IHomeViewModel">
             <summary>
             View model for HomeView
@@ -748,6 +753,9 @@
             <summary>
             Abstract base class for equation view models
             </summary>
+        </member>
+        <member name="P:MobileXamarin.ViewModels.EquationViewModelBase.IsBusy">
+            <inheritdoc />
         </member>
         <member name="P:MobileXamarin.ViewModels.EquationViewModelBase.Resolve">
             <inheritdoc />

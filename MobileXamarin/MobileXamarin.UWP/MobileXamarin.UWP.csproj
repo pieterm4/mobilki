@@ -167,6 +167,9 @@
     <PackageReference Include="Microcharts.Forms">
       <Version>0.7.1</Version>
     </PackageReference>
+    <PackageReference Include="Telerik.UI.for.Xamarin.Trial">
+      <Version>2019.1.318.1</Version>
+    </PackageReference>
     <PackageReference Include="Win2D.uwp">
       <Version>1.23.0</Version>
     </PackageReference>

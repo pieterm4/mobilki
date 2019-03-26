@@ -270,6 +270,8 @@ namespace MobileXamarin.ViewModels
         /// <inheritdoc />
         protected override async Task ResolveExecute()
         {
+            IsBusy = true;
+            
             var massOfTheRocketUnit = UnitRepository.GetUnitByString(SelectedMassOfTheRocketUnit);
             var massOfTheFuelUnit = UnitRepository.GetUnitByString(SelectedMassOfTheFuelUnit);
             var properImpulseUnit = UnitRepository.GetUnitByString(SelectedProperImpulseUnit);
@@ -286,8 +288,9 @@ namespace MobileXamarin.ViewModels
             };
 
             messenger.Send(result);
-
-            await NavigationService.NavigateTo(nameof(ResultView), parameters, true);
+            await Task.Delay(2000);
+            IsBusy = false;
+            await NavigationService.NavigateTo(nameof(ResultView), parameters, true);  
         }
     }
 }

@@ -4,7 +4,11 @@
              xmlns:extensions="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
              xmlns:math="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+             xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
              x:Class="MobileXamarin.Views.ResultView"
+             xmlns:viewModel="clr-namespace:MobileXamarin.ViewModels"
              Title="{extensions:Translate Key=RESULT_TITLE}" 
              BindingContext="{Binding Result, Source={StaticResource Locator}}">
     <ContentPage.Content>
@@ -16,18 +20,43 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Text="Result" Margin="10, 20, 10, 0" FontSize="Large"/>
-            <ScrollView Grid.Row="1" Margin="10, 20, 10, 0">
-                <ListView ItemsSource="{Binding Solution, Mode=TwoWay}" HasUnevenRows="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <math:MathView Source="{Binding}" FontSize="50" HorizontalOptions="Start"/>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </ScrollView>
-            <microcharts:ChartView Grid.Row="2" x:Name="Chart" Margin="0, 10, 0, 10" Chart="{Binding Chart, Mode=TwoWay}" />
+
+            <!--<ListView x:Name="equotionList" Grid.Row="1" ItemsSource="{Binding Solution, Mode=TwoWay}" HasUnevenRows="True" VerticalScrollBarVisibility="Always">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <math:MathView Source="{Binding}" FontSize="50" HorizontalOptions="Start"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <telerikDataControls:RadListView Grid.Row="1" x:Name="equationList" ItemsSource="{Binding Solution, Mode=TwoWay}">
+                <telerikDataControls:RadListView.ItemTemplate>
+                    <DataTemplate>
+                        <telerikListView:ListViewTemplateCell>
+                            <telerikListView:ListViewTemplateCell.View>
+                                <math:MathView Source="{Binding}" FontSize="50" HorizontalOptions="Start" Margin="10"/>
+                            </telerikListView:ListViewTemplateCell.View>
+                        </telerikListView:ListViewTemplateCell>
+                    </DataTemplate>
+                </telerikDataControls:RadListView.ItemTemplate>
+            </telerikDataControls:RadListView>
+            <!--<microcharts:ChartView Grid.Row="2" x:Name="Chart" Margin="0, 10, 0, 10" Chart="{Binding Chart, Mode=TwoWay}" />-->
+
+            <telerikChart:RadCartesianChart x:Name="chart" Grid.Row="2">
+                <telerikChart:RadCartesianChart.HorizontalAxis>
+                    <telerikChart:CategoricalAxis />
+                </telerikChart:RadCartesianChart.HorizontalAxis>
+                <telerikChart:RadCartesianChart.VerticalAxis>
+                    <telerikChart:NumericalAxis />
+                </telerikChart:RadCartesianChart.VerticalAxis>
+                <telerikChart:RadCartesianChart.Series>
+                    <telerikChart:LineSeries
+                                             ValueBinding="Y" 
+                                             ItemsSource="{Binding ControlPoints}" />
+                </telerikChart:RadCartesianChart.Series>
+            </telerikChart:RadCartesianChart>
 
             <Button Command="{Binding Finish}"  Grid.Row="3"  Text="Finish" HorizontalOptions="CenterAndExpand"  />
         </Grid>

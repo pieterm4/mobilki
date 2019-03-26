@@ -15,5 +15,10 @@ namespace MobileXamarin.IViewModels
         /// Gets command for resolving equation
         /// </summary>
         RelayCommand Resolve { get; }
+
+        /// <summary>
+        /// Indicates when to show busy indication
+        /// </summary>
+        bool IsBusy { get; set; }
     }
 }

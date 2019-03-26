@@ -8,12 +8,13 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" HorizontalOptions="Center" Margin="20, 50, 20, 0">
+            <Grid Grid.Row="0" HorizontalOptions="Center" Margin="20, 50, 20, 20">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -25,27 +26,28 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" Text="Mass of the rocket: " VerticalOptions="End" HorizontalOptions="End"/>
-                <Entry Grid.Row="0" Grid.Column="1" Margin="20, 0, 0, 0" Placeholder="Mass of the rocket" Keyboard="Numeric" Text="{Binding MassOfTheRocket, Mode=TwoWay}" VerticalOptions="End"/>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" Text="Mass of the rocket: " VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Entry Grid.Row="0" Grid.Column="1" Margin="20, 0, 0, 0" Placeholder="Mass of the rocket" Keyboard="Numeric" Text="{Binding MassOfTheRocket, Mode=TwoWay}" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
                 <Picker Grid.Row="0" Grid.Column="2" ItemsSource="{Binding MassOfTheRocketUnits, Mode=TwoWay}" SelectedItem="{Binding SelectedMassOfTheRocketUnit, Mode=TwoWay}" />
 
-                <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Mass of the fuel: " VerticalOptions="End" HorizontalOptions="End"/>
-                <Entry Grid.Row="1" Grid.Column="1" Placeholder="Mass of the fuel" Keyboard="Numeric" Text="{Binding MassOfTheFuel, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End"/>
+                <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Mass of the fuel: " VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Entry Grid.Row="1" Grid.Column="1" Placeholder="Mass of the fuel" Keyboard="Numeric" Text="{Binding MassOfTheFuel, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
                 <Picker Grid.Row="1" Grid.Column="2" ItemsSource="{Binding MassOfTheFuelUnits, Mode=TwoWay}" SelectedItem="{Binding SelectedMassOfTheFuelUnit, Mode=TwoWay}" />
 
-                <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Flight time: " VerticalOptions="End" HorizontalOptions="End"/>
-                <Entry Grid.Row="2" Grid.Column="1" Placeholder="Speed" Keyboard="Numeric" Text="{Binding FlightTime, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End"/>
+                <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Flight time: " VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Entry Grid.Row="2" Grid.Column="1" Placeholder="Flight time" Keyboard="Numeric" Text="{Binding FlightTime, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
                 <Picker Grid.Row="2" Grid.Column="2" ItemsSource="{Binding FlightTimeUnits, Mode=TwoWay}" SelectedItem="{Binding SelectedFlightTimeUnit, Mode=TwoWay}" />
 
-                <Label Grid.Row="3" Grid.Column="0" FontSize="Medium" Text="The exhaust velocity: " VerticalOptions="End" HorizontalOptions="End"/>
-                <Entry Grid.Row="3" Grid.Column="1" Placeholder="Speed" Keyboard="Numeric" Text="{Binding ProperImpulse, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End"/>
+                <Label Grid.Row="3" Grid.Column="0" FontSize="Medium" Text="The exhaust velocity: " VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Entry Grid.Row="3" Grid.Column="1" Placeholder="The exhaust velocity" Keyboard="Numeric" Text="{Binding ProperImpulse, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
                 <Picker Grid.Row="3" Grid.Column="2" ItemsSource="{Binding ProperImpulseUnits, Mode=TwoWay}" SelectedItem="{Binding SelectedProperImpulseUnit, Mode=TwoWay}" />
 
-                <Label Grid.Row="4" Grid.Column="0" FontSize="Medium" Text="Amount of thrown fuel: " VerticalOptions="End" HorizontalOptions="End"/>
-                <Entry Grid.Row="4" Grid.Column="1" Placeholder="Speed" Keyboard="Numeric" Text="{Binding AmountOfThrownFuel, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End"/>
+                <Label Grid.Row="4" Grid.Column="0" FontSize="Medium" Text="Amount of thrown fuel: " VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Entry Grid.Row="4" Grid.Column="1" Placeholder="Amount of thrown fuel" Keyboard="Numeric" Text="{Binding AmountOfThrownFuel, Mode=TwoWay}" Margin="20, 0, 0, 0" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
                 <Picker Grid.Row="4" Grid.Column="2" ItemsSource="{Binding AmountOfThrownFuelUnits, Mode=TwoWay}" SelectedItem="{Binding SelectedAmountOfThrownFuelUnit, Mode=TwoWay}" />
             </Grid>
-            <Button Text="Solve" Grid.Row="1" Margin="10" Command="{Binding Resolve}" />
+            <ActivityIndicator Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="{Binding IsBusy, Mode=TwoWay}" Color="Red" />
+            <Button Text="Solve" Grid.Row="2" Margin="10" Command="{Binding Resolve}" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

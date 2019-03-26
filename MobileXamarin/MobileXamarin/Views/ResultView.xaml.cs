@@ -15,19 +15,15 @@ namespace MobileXamarin.Views
         {
             InitializeComponent();
             ViewModel = BindingContext as IResultViewModel;
-            //if (ViewModel != null)
-            //{
-            //    ViewModel.Result.CollectionChanged += OnCollectionChanged;
-            //    Math.LaTeX = string.Join(@"\\", ViewModel.Result);
-            //}
+            
         }
 
-        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        protected override void OnAppearing()
         {
-            //Math.LaTeX = string.Empty;
-            //var newItems = e.NewItems;
-            //Math.LaTeX = string.Join(@"\\", newItems);
+            base.OnAppearing();
+            equationList.ScrollItemIntoView(ViewModel.Solution.Last());
         }
+
 
         protected override bool OnBackButtonPressed()
         {

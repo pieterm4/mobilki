@@ -13,6 +13,22 @@ namespace MobileXamarin.ViewModels
     /// </summary>
     public abstract class EquationViewModelBase : BaseViewModel, IEquationViewModelBase
     {
+        private bool isBusy;
+
+        /// <inheritdoc />
+        public bool IsBusy
+        {
+            get => isBusy;
+            set
+            {
+                if (isBusy != value)
+                {
+                    isBusy = value;
+                    OnPropertyChanged(nameof(IsBusy));
+                }
+            }
+        }
+
         /// <inheritdoc />
         public RelayCommand Resolve { get; }
 
