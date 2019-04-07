@@ -1,51 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver" BaseTypeListCollapsed="true">
-    <Position X="1.75" Y="1.25" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
-      <FileName>EquotionResolvers\KineticKineticEquotionResolver.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="MobileXamarin.EquotionResolvers.LagrangeResolver" BaseTypeListCollapsed="true">
-    <Position X="7.25" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquotionResolvers\LagrangeResolver.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="MobileXamarin.EquotionResolvers.RocketEquationResolver">
-    <Position X="5.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquotionResolvers\RocketEquationResolver.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="System.Object" Collapsed="true">
-    <Position X="7.25" Y="0.75" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
-  <Interface Name="MobileXamarin.EquotionResolvers.IKineticEquotionResolver">
-    <Position X="5.5" Y="4" Width="1.5" />
+  <Class Name="MobileXamarin.EquationResolvers.KineticEquationResolver" BaseTypeListCollapsed="true">
+    <Position X="1" Y="2.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquotionResolvers\IKineticEquotionResolver.cs</FileName>
+      <FileName>EquationResolvers\KineticEquotionResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.EquationResolvers.LagrangeResolver" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquationResolvers\LagrangeResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobileXamarin.EquationResolvers.RocketEquationResolver" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquationResolvers\RocketEquationResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MobileXamarin.EquationResolvers.IKineticEquationResolver">
+    <Position X="1" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquationResolvers\IKineticEquationResolver.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MobileXamarin.EquotionResolvers.ILagrangeResolver">
-    <Position X="7.25" Y="4" Width="1.5" />
+  <Interface Name="MobileXamarin.EquationResolvers.ILagrangeResolver">
+    <Position X="5.75" Y="0.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquotionResolvers\ILagrangeResolver.cs</FileName>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquationResolvers\ILagrangeResolver.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="MobileXamarin.EquotionResolvers.IRocketEquationResolver">
-    <Position X="5.5" Y="6" Width="1.5" />
+  <Interface Name="MobileXamarin.EquationResolvers.IRocketEquationResolver">
+    <Position X="3.25" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquotionResolvers\IRocketEquationResolver.cs</FileName>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquationResolvers\IRocketEquationResolver.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
