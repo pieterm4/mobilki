@@ -15,7 +15,9 @@ namespace MobileXamarin.ViewModels
     {
         private bool isBusy;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Indicates when to show busy indication
+        /// </summary>
         public bool IsBusy
         {
             get => isBusy;
@@ -29,7 +31,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets command for resolving equation
+        /// </summary>
         public RelayCommand Resolve { get; }
 
         /// <summary>

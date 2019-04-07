@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Specialized;
-using System.Linq;
 using MobileXamarin.IViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,8 +6,11 @@ using Point = MobileXamarin.Models.Point;
 
 namespace MobileXamarin.Views
 {
+    /// <summary>
+    /// Lagrange view
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LagrangeEquotionView : ContentPage
+    public partial class LagrangeEquationView : ContentPage
     {
         /// <summary>
         /// View Model which is context for that view
@@ -19,7 +20,7 @@ namespace MobileXamarin.Views
         /// <summary>
         /// Lagrange Equation View Constructor
         /// </summary>
-        public LagrangeEquotionView()
+        public LagrangeEquationView()
         {
             InitializeComponent();
         }

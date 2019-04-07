@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MobileXamarin.Models;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <summary>
     /// Resolver for Lagrange interpolation equation

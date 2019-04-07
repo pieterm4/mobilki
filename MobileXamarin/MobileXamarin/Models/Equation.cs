@@ -15,13 +15,19 @@ namespace MobileXamarin.Models
     {
         private readonly string imageName;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Name of the equation
+        /// </summary>
         public string Name { get; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Type of equation
+        /// </summary>
         public EquationType EquationType { get; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets the image of that equation
+        /// </summary>
         public ImageSource Image => ImageSource.FromResource($"MobileXamarin.AppResources.Assets.{imageName}");
 
 

@@ -264,12 +264,12 @@
             Unknown unit
             </summary>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.IKineticEquotionResolver">
+        <member name="T:MobileXamarin.EquationResolvers.IKineticEquationResolver">
             <summary>
             Resolver for kinetic energy equation
             </summary>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.IKineticEquotionResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
+        <member name="M:MobileXamarin.EquationResolvers.IKineticEquationResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
             <summary>
             Resolves kinetic energy equation
             </summary>
@@ -279,54 +279,61 @@
             <param name="speedUnit">Unit of object's speed</param>
             <returns>Returns step by step in Latex format result of the equation resolving</returns>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.ILagrangeResolver">
+        <member name="T:MobileXamarin.EquationResolvers.ILagrangeResolver">
             <summary>
             Resolver for Lagrange interpolation equation
             </summary>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.ILagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
+        <member name="M:MobileXamarin.EquationResolvers.ILagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
             <summary>
             Resolves lagrange interpolation
             </summary>
             <param name="controlPoints">Control points based on interpolation is calculated</param>
             <returns>Points which can be displayed on the chart</returns>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.IRocketEquationResolver">
+        <member name="T:MobileXamarin.EquationResolvers.IRocketEquationResolver">
             <summary>
             Resolver for vertical rocket start equation
             </summary>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.IRocketEquationResolver.Resolve(MobileXamarin.Models.RocketParameter)">
+        <member name="M:MobileXamarin.EquationResolvers.IRocketEquationResolver.Resolve(MobileXamarin.Models.RocketParameter)">
             <summary>
             Resolves rocket equation
             </summary>
             <param name="rocketParameter">Parameters of the rocket</param>
-            <returns></returns>
+            <returns>Result</returns>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver">
+        <member name="T:MobileXamarin.EquationResolvers.KineticEquationResolver">
             <inheritdoc />
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
-            <inheritdoc />
+        <member name="M:MobileXamarin.EquationResolvers.KineticEquationResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
+            <summary>
+            Resolves kinetic energy equation
+            </summary>
+            <param name="weight">Weight of the object</param>
+            <param name="weightUnit">Unit of object's weight</param>
+            <param name="speed">Speed of object</param>
+            <param name="speedUnit">Unit of object's speed</param>
+            <returns>Returns step by step in Latex format result of the equation resolving</returns>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.LagrangeResolver">
+        <member name="T:MobileXamarin.EquationResolvers.LagrangeResolver">
             <summary>
             Lagrange resolver
             </summary>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.LagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
+        <member name="M:MobileXamarin.EquationResolvers.LagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
             <summary>
             Resolves lagrange interpolation
             </summary>
             <param name="controlPoints">Control points based on interpolation is calculated</param>
             <returns>Points which can be displayed on the chart</returns>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.Normalization">
+        <member name="T:MobileXamarin.EquationResolvers.Normalization">
             <summary>
             Normalization class
             </summary>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeSpeed(System.Double,MobileXamarin.Enums.Units)">
+        <member name="M:MobileXamarin.EquationResolvers.Normalization.NormalizeSpeed(System.Double,MobileXamarin.Enums.Units)">
             <summary>
             Normalizes speed to meter per second
             </summary>
@@ -335,7 +342,7 @@
             <returns>Speed in meter for second unit</returns>
             <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeWeight(System.Double,MobileXamarin.Enums.Units)">
+        <member name="M:MobileXamarin.EquationResolvers.Normalization.NormalizeWeight(System.Double,MobileXamarin.Enums.Units)">
             <summary>
             Normalizes weight to kilograms
             </summary>
@@ -344,7 +351,7 @@
             <returns>Weight in kilograms</returns>
             <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.Normalization.NormalizeTime(System.Double,MobileXamarin.Enums.Units)">
+        <member name="M:MobileXamarin.EquationResolvers.Normalization.NormalizeTime(System.Double,MobileXamarin.Enums.Units)">
             <summary>
             Normalizes time to seconds
             </summary>
@@ -353,11 +360,15 @@
             <returns>Time in seconds</returns>
             <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Exception when cannot find unit</exception>
         </member>
-        <member name="T:MobileXamarin.EquotionResolvers.RocketEquationResolver">
+        <member name="T:MobileXamarin.EquationResolvers.RocketEquationResolver">
             <inheritdoc />
         </member>
-        <member name="M:MobileXamarin.EquotionResolvers.RocketEquationResolver.Resolve(MobileXamarin.Models.RocketParameter)">
-            <inheritdoc />
+        <member name="M:MobileXamarin.EquationResolvers.RocketEquationResolver.Resolve(MobileXamarin.Models.RocketParameter)">
+            <summary>
+            Resolves rocket equation
+            </summary>
+            <param name="rocketParameter">Parameters of the rocket</param>
+            <returns>Result</returns>
         </member>
         <member name="T:MobileXamarin.IModels.IEquation">
             <summary>
@@ -479,6 +490,16 @@
             Gets or sets command which finish this equation resolving and goes to the start page
             </summary>
         </member>
+        <member name="P:MobileXamarin.IViewModels.IResultViewModel.Chart">
+            <summary>
+            Gets or sets chart (right now we use Telerik, so it is not used
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.IViewModels.IResultViewModel.StartPoints">
+            <summary>
+            Start points before calculation
+            </summary>
+        </member>
         <member name="T:MobileXamarin.IViewModels.IRocketEquationViewModel">
             <summary>
             Rocket equation view model
@@ -565,13 +586,19 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.Models.Equation.Name">
-            <inheritdoc />
+            <summary>
+            Name of the equation
+            </summary>
         </member>
         <member name="P:MobileXamarin.Models.Equation.EquationType">
-            <inheritdoc />
+            <summary>
+            Type of equation
+            </summary>
         </member>
         <member name="P:MobileXamarin.Models.Equation.Image">
-            <inheritdoc />
+            <summary>
+            Gets the image of that equation
+            </summary>
         </member>
         <member name="M:MobileXamarin.Models.Equation.#ctor(System.String,System.String,MobileXamarin.Enums.EquationType)">
             <summary>
@@ -586,7 +613,7 @@
         </member>
         <member name="T:MobileXamarin.Models.Point">
             <summary>
-            Point with double points
+            Point with double type parameters
             </summary>
         </member>
         <member name="P:MobileXamarin.Models.Point.X">
@@ -611,7 +638,7 @@
         </member>
         <member name="T:MobileXamarin.Models.Result">
             <summary>
-            Result of rocket equation resolver
+            Result holder for any equations
             </summary>
         </member>
         <member name="P:MobileXamarin.Models.Result.ControlPoints">
@@ -723,7 +750,10 @@
             </summary>
         </member>
         <member name="M:MobileXamarin.Repository.EquationRepository.GetEquations">
-            <inheritdoc />
+            <summary>
+            Get all saved equations
+            </summary>
+            <returns>Returns all equations</returns>
         </member>
         <member name="T:MobileXamarin.Repository.IEquationRepository">
             <summary>
@@ -787,10 +817,14 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.EquationViewModelBase.IsBusy">
-            <inheritdoc />
+            <summary>
+            Indicates when to show busy indication
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.EquationViewModelBase.Resolve">
-            <inheritdoc />
+            <summary>
+            Gets command for resolving equation
+            </summary>
         </member>
         <member name="M:MobileXamarin.ViewModels.EquationViewModelBase.#ctor">
             <summary>
@@ -820,7 +854,9 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.HomeViewModel.Equations">
-            <inheritdoc />
+            <summary>
+            Gets all equations
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.HomeViewModel.NextPageCommand">
             <summary>
@@ -840,10 +876,14 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.Weight">
-            <inheritdoc />
+            <summary>
+            Gets or sets weight of the object
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.Speed">
-            <inheritdoc />
+            <summary>
+            Gets or sets speed of the object
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.WeightUnits">
             <summary>
@@ -856,24 +896,34 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.SelectedWeightUnit">
-            <inheritdoc />
+            <summary>
+            Gets or sets unit for the weight of the object
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.SelectedSpeedUnit">
-            <inheritdoc />
+            <summary>
+            Gets or sets unit for the speed of the object
+            </summary>
         </member>
-        <member name="M:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.IKineticEquotionResolver,Xamarin.Forms.Navigation.INavigationService,GalaSoft.MvvmLight.Messaging.IMessenger)">
+        <member name="M:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.#ctor(MobileXamarin.EquationResolvers.IKineticEquationResolver,Xamarin.Forms.Navigation.INavigationService,GalaSoft.MvvmLight.Messaging.IMessenger)">
             <summary>
             Constructor for KineticEnergyEquationViewModel
             </summary>
-            <param name="resolver">Resolver for kinetic energy equation <see cref="T:MobileXamarin.EquotionResolvers.IKineticEquotionResolver"/></param>
+            <param name="resolver">Resolver for kinetic energy equation <see cref="T:MobileXamarin.EquationResolvers.IKineticEquationResolver"/></param>
             <param name="navigationService">Navigation service <see cref="T:Xamarin.Forms.Navigation.INavigationService"/></param>
             <param name="messenger">Messenger <see cref="T:GalaSoft.MvvmLight.Messaging.IMessenger"/></param>
         </member>
         <member name="M:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.ResolveCanExecute">
-            <inheritdoc />
+            <summary>
+            Determines if can execute Resolve command
+            </summary>
+            <returns>True when can execute Resolve command, False if not</returns>
         </member>
         <member name="M:MobileXamarin.ViewModels.KineticEnergyEquationViewModel.ResolveExecute">
-            <inheritdoc />
+            <summary>
+            Executes Resolve command
+            </summary>
+            <returns>Task which execute command</returns>
         </member>
         <member name="T:MobileXamarin.ViewModels.LagrangeEquationViewModel">
             <summary>
@@ -881,33 +931,49 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.ControlPoints">
-            <inheritdoc />
+            <summary>
+            Gets or sets start control points for interpolation
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.NewX">
-            <inheritdoc />
+            <summary>
+            Gets or sets x position of new control point
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.NewY">
-            <inheritdoc />
+            <summary>
+            Gets or sets y position of new control point
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.AddControlPointCommand">
-            <inheritdoc />
+            <summary>
+            Gets or sets command which adds new control point
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.RemoveControlPointCommand">
-            <inheritdoc />
+            <summary>
+            Gets or sets command which removes last control point
+            </summary>
         </member>
-        <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.ILagrangeResolver,GalaSoft.MvvmLight.Messaging.IMessenger,Xamarin.Forms.Navigation.INavigationService)">
+        <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.#ctor(MobileXamarin.EquationResolvers.ILagrangeResolver,GalaSoft.MvvmLight.Messaging.IMessenger,Xamarin.Forms.Navigation.INavigationService)">
             <summary>
             Constructor for LagrangeEquationViewModel
             </summary>
-            <param name="resolver">Lagrange interpolation equation resolver <see cref="T:MobileXamarin.EquotionResolvers.ILagrangeResolver"/></param>
+            <param name="resolver">Lagrange interpolation equation resolver <see cref="T:MobileXamarin.EquationResolvers.ILagrangeResolver"/></param>
             <param name="messenger">Messenger <see cref="T:GalaSoft.MvvmLight.Messaging.IMessenger"/></param>
             <param name="navigationService">Navigation service <see cref="T:Xamarin.Forms.Navigation.INavigationService"/></param>
         </member>
         <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.ResolveCanExecute">
-            <inheritdoc />
+            <summary>
+            Determines if can execute Resolve command
+            </summary>
+            <returns>True when can execute Resolve command, False if not</returns>
         </member>
         <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.ResolveExecute">
-            <inheritdoc />
+            <summary>
+            Executes Resolve command
+            </summary>
+            <returns>Task which execute command</returns>
         </member>
         <member name="T:MobileXamarin.ViewModels.ResultViewModel">
             <summary>
@@ -915,18 +981,29 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.Solution">
-            <inheritdoc />
+            <summary>
+            Gets or sets collection of step results for the equation in MathSource type to display math symbols correctly
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.ControlPoints">
-            <inheritdoc />
+            <summary>
+            Control points for chart
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.StartPoints">
             <summary>
-            Points before calculation
+            Start points before calculation
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.ViewModels.ResultViewModel.Chart">
+            <summary>
+            Gets or sets chart (right now we use Telerik, so it is not used
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.Finish">
-            <inheritdoc />
+            <summary>
+            Gets or sets command which finish this equation resolving and goes to the start page
+            </summary>
         </member>
         <member name="M:MobileXamarin.ViewModels.ResultViewModel.#ctor(Xamarin.Forms.Navigation.INavigationService,Xamarin.Forms.Popups.IPopupsService,GalaSoft.MvvmLight.Messaging.IMessenger)">
             <summary>
@@ -951,63 +1028,99 @@
             </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.MassOfTheRocket">
-            <inheritdoc />
+            <summary>
+            Gets or sets mass of the rocket
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.MassOfTheFuel">
-            <inheritdoc />
+            <summary>
+            Gets or sets mass of the fuel in the rocket
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.FlightTime">
-            <inheritdoc />
+            <summary>
+            Gets or sets for how long of the rocket's trip the result is calculating
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.ProperImpulse">
-            <inheritdoc />
+            <summary>
+            Gets or sets value of how much fuel is throwing out from the rocket
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.AmountOfThrownFuel">
-            <inheritdoc />
+            <summary>
+            Amount of thrown fuel away for period of time eg kg/s
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedMassOfTheRocketUnit">
-            <inheritdoc />
+            <summary>
+            Selected unit for mass of the rocket
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedMassOfTheFuelUnit">
-            <inheritdoc />
+            <summary>
+            Selected unit for mass of the fuel
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedFlightTimeUnit">
-            <inheritdoc />
+            <summary>
+            Selected unit for the flight time
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedProperImpulseUnit">
-            <inheritdoc />
+            <summary>
+            Selected unit for the proper impulse
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.SelectedAmountOfThrownFuelUnit">
-            <inheritdoc />
+            <summary>
+            Unit for thrown fuel away eg. kg/s
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.MassOfTheRocketUnits">
-            <inheritdoc />
+            <summary>
+            Gets or sets units for mass of the rocket
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.MassOfTheFuelUnits">
-            <inheritdoc />
+            <summary>
+            Gets or sets units for mass of the fuel
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.FlightTimeUnits">
-            <inheritdoc />
+            <summary>
+            Gets or sets units for the flight time
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.ProperImpulseUnits">
-            <inheritdoc />
+            <summary>
+            Gets or sets units for the proper impulse
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.RocketEquationViewModel.AmountOfThrownFuelUnits">
-            <inheritdoc />
+            <summary>
+            Gets or sets units for amount of thrown fuel
+            </summary>
         </member>
-        <member name="M:MobileXamarin.ViewModels.RocketEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.IRocketEquationResolver,Xamarin.Forms.Navigation.INavigationService,GalaSoft.MvvmLight.Messaging.IMessenger)">
+        <member name="M:MobileXamarin.ViewModels.RocketEquationViewModel.#ctor(MobileXamarin.EquationResolvers.IRocketEquationResolver,Xamarin.Forms.Navigation.INavigationService,GalaSoft.MvvmLight.Messaging.IMessenger)">
             <summary>
             Constructor for RocketEquationViewModel
             </summary>
-            <param name="resolver"></param>
-            <param name="navigationService"></param>
-            <param name="messenger"></param>
+            <param name="resolver">Equation resolver for rocket</param>
+            <param name="navigationService">Navigation service</param>
+            <param name="messenger">Messenger</param>
         </member>
         <member name="M:MobileXamarin.ViewModels.RocketEquationViewModel.ResolveCanExecute">
-            <inheritdoc />
+            <summary>
+            Determines if can execute Resolve command
+            </summary>
+            <returns>True when can execute Resolve command, False if not</returns>
         </member>
         <member name="M:MobileXamarin.ViewModels.RocketEquationViewModel.ResolveExecute">
-            <inheritdoc />
+            <summary>
+            Executes Resolve command
+            </summary>
+            <returns>Task which execute command</returns>
         </member>
         <member name="T:MobileXamarin.ViewModels.ViewModelLocator">
             <summary>
@@ -1044,14 +1157,100 @@
             Gets an instance for <see cref="T:MobileXamarin.IViewModels.IRocketEquationViewModel"/> <see cref="T:MobileXamarin.ViewModels.RocketEquationViewModel"/>
             </summary>
         </member>
-        <member name="P:MobileXamarin.Views.LagrangeEquotionView.ViewModel">
+        <member name="T:MobileXamarin.App">
+            <summary>
+            Core class for Xamarin app
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.App.#ctor">
+            <summary>
+            Constructor for App
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.App.OnStart">
+            <summary>
+            Handle when your app starts
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.App.OnSleep">
+            <summary>
+            Handle when your app sleeps
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.App.OnResume">
+            <summary>
+            Handle when your app resumes
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.Views.HomeView">
+            <summary>
+            Home view class
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.HomeView.#ctor">
+            <summary>
+            Constructor for Home view
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.Views.KineticEnergyEquationView">
+            <summary>
+            Kinetic energy view
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.KineticEnergyEquationView.#ctor">
+            <summary>
+            Constructor for kinetic energy
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.Views.LagrangeEquationView">
+            <summary>
+            Lagrange view
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Views.LagrangeEquationView.ViewModel">
             <summary>
             View Model which is context for that view
             </summary>
         </member>
-        <member name="M:MobileXamarin.Views.LagrangeEquotionView.#ctor">
+        <member name="M:MobileXamarin.Views.LagrangeEquationView.#ctor">
             <summary>
             Lagrange Equation View Constructor
+            </summary>
+        </member>
+        <member name="T:MobileXamarin.Views.ResultView">
+            <summary>
+            Result view
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Views.ResultView.ViewModel">
+            <summary>
+            View model for that view
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.ResultView.#ctor">
+            <summary>
+            Constructor for result view
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.ResultView.OnAppearing">
+            <summary>
+            Handle when view is appearing
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.ResultView.OnBackButtonPressed">
+            <summary>
+            Handle when back button pressed
+            </summary>
+            <returns>True if pressed</returns>
+        </member>
+        <member name="T:MobileXamarin.Views.RocketEquationView">
+            <summary>
+            Rocket view
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.RocketEquationView.#ctor">
+            <summary>
+            Constructor for a rocket
             </summary>
         </member>
     </members>

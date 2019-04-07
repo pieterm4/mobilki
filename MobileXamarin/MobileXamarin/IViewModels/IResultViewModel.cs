@@ -31,7 +31,14 @@ namespace MobileXamarin.IViewModels
         /// </summary>
         RelayCommand Finish { get; set; }
 
+        /// <summary>
+        /// Gets or sets chart (right now we use Telerik, so it is not used
+        /// </summary>
         Chart Chart { get; set; }
+
+        /// <summary>
+        /// Start points before calculation
+        /// </summary>
         ObservableCollection<Point> StartPoints { get; set; }
     }
 }

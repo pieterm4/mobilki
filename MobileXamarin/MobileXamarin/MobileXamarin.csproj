@@ -84,7 +84,7 @@
     <None Remove="AppResources\Assets\malpa.jpg" />
     <None Remove="AppResources\Assets\rocket.png" />
     <None Remove="AppResources\malpa.jpg" />
-    <None Remove="Views\LagrangeEquotionView.xaml" />
+    <None Remove="Views\LagrangeEquationView.xaml" />
     <None Remove="Views\ResultView.xaml" />
   </ItemGroup>
 
@@ -94,10 +94,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\LagrangeEquationView.xaml.cs">
+      <DependentUpon>LagrangeEquationView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\LagrangeEquotionView.xaml">
+    <EmbeddedResource Update="Views\LagrangeEquationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ResultView.xaml">

@@ -5,7 +5,7 @@
 namespace MobileXamarin.Models
 {
     /// <summary>
-    /// Point with double points
+    /// Point with double type parameters
     /// </summary>
     public class Point
     {

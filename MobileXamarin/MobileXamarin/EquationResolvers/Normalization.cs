@@ -6,7 +6,7 @@ using System.ComponentModel;
 using MobileXamarin.AppResources.Localization;
 using MobileXamarin.Enums;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <summary>
     /// Normalization class

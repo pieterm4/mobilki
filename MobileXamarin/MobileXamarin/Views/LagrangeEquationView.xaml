@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:extensions="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
              Title="{extensions:Translate Key=LAGRANGE}"
-             x:Class="MobileXamarin.Views.LagrangeEquotionView"
+             x:Class="MobileXamarin.Views.LagrangeEquationView"
              xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
              BindingContext="{Binding Lagrange, Source={StaticResource Locator}}">
     <ContentPage.Content>

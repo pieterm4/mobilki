@@ -32,7 +32,9 @@ namespace MobileXamarin.ViewModels
         private ObservableCollection<MathSource> solution;
         private Chart chart;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets collection of step results for the equation in MathSource type to display math symbols correctly
+        /// </summary>
         public ObservableCollection<MathSource> Solution
         {
             get => solution;
@@ -46,14 +48,19 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Control points for chart
+        /// </summary>
         public ObservableCollection<Point> ControlPoints { get; set; }
 
         /// <summary>
-        /// Points before calculation
+        /// Start points before calculation
         /// </summary>
         public ObservableCollection<Point> StartPoints { get; set; }
 
+        /// <summary>
+        /// Gets or sets chart (right now we use Telerik, so it is not used
+        /// </summary>
         public Chart Chart
         {
             get => chart;
@@ -67,7 +74,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets command which finish this equation resolving and goes to the start page
+        /// </summary>
         public RelayCommand Finish { get; set; }
 
         /// <summary>

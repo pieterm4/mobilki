@@ -3,7 +3,7 @@ using Xamarin.Forms.Popups;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using MobileXamarin.EquotionResolvers;
+using MobileXamarin.EquationResolvers;
 using MobileXamarin.Repository;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Navigation;
@@ -24,7 +24,7 @@ namespace MobileXamarin.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<IEquationRepository, EquationRepository>();
-            SimpleIoc.Default.Register<IKineticEquotionResolver, KineticKineticEquotionResolver>();
+            SimpleIoc.Default.Register<IKineticEquationResolver, KineticEquationResolver>();
             SimpleIoc.Default.Register<ILagrangeResolver, LagrangeResolver>();
             SimpleIoc.Default.Register<IRocketEquationResolver, RocketEquationResolver>();
 

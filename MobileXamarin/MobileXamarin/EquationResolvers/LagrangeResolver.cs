@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MobileXamarin.Models;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <summary>
     /// Lagrange resolver
@@ -51,14 +51,12 @@ namespace MobileXamarin.EquotionResolvers
         private double Interpolate(double xp, List<Point> orderedControlPoints)
         {
             var amountOfControlPoints = orderedControlPoints.Count;
-            double yp;
             int i, k;
-            yp = 0.0;
+            var yp = 0.0;
             for (i = 0; i < amountOfControlPoints; i++)
             {
                 var nominator = 1.0;
                 var denominator = 1.0;
-                /* calculate the Lk elements */
                 for (k = 0; k < amountOfControlPoints; k++)
                 {
                     if (k != i)
@@ -68,12 +66,12 @@ namespace MobileXamarin.EquotionResolvers
                         denominator = denominator * (orderedControlPoints.ElementAt(i).X - orderedControlPoints.ElementAt(k).X);
                     }
                 }
-                /* put every thing thogether to yp*/
                 if (Math.Abs(denominator) > double.Epsilon)
                     yp = yp + orderedControlPoints.ElementAt(i).Y * nominator / denominator;
                 else
                     yp = 0.0;
             }
+
             return yp;
         }
     }

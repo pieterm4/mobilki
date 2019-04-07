@@ -5,13 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Drawing;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using MobileXamarin.Enums;
-using MobileXamarin.EquotionResolvers;
+using MobileXamarin.EquationResolvers;
 using MobileXamarin.IViewModels;
-using MobileXamarin.Models;
 using MobileXamarin.Repository;
 using MobileXamarin.Views;
 using Xamarin.Forms.Navigation;
@@ -23,14 +21,16 @@ namespace MobileXamarin.ViewModels
     /// </summary>
     public class KineticEnergyEquationViewModel : EquationViewModelBase, IKineticEnergyEquationViewModel
     {
-        private readonly IKineticEquotionResolver resolver;
+        private readonly IKineticEquationResolver resolver;
         private readonly IMessenger messenger;
         private double weight;
         private double speed;
         private string selectedWeightUnit;
         private string selectedSpeedUnit;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets weight of the object
+        /// </summary>
         public double Weight
         {
             get => weight;
@@ -44,7 +44,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets speed of the object
+        /// </summary>
         public double Speed
         {
             get => speed;
@@ -68,7 +70,9 @@ namespace MobileXamarin.ViewModels
         /// </summary>
         public ObservableCollection<string> SpeedUnits { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets unit for the weight of the object
+        /// </summary>
         public string SelectedWeightUnit
         {
             get => selectedWeightUnit;
@@ -82,7 +86,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets unit for the speed of the object
+        /// </summary>
         public string SelectedSpeedUnit
         {
             get => selectedSpeedUnit;
@@ -99,11 +105,11 @@ namespace MobileXamarin.ViewModels
         /// <summary>
         /// Constructor for KineticEnergyEquationViewModel
         /// </summary>
-        /// <param name="resolver">Resolver for kinetic energy equation <see cref="IKineticEquotionResolver"/></param>
+        /// <param name="resolver">Resolver for kinetic energy equation <see cref="IKineticEquationResolver"/></param>
         /// <param name="navigationService">Navigation service <see cref="INavigationService"/></param>
         /// <param name="messenger">Messenger <see cref="IMessenger"/></param>
         public KineticEnergyEquationViewModel(
-            IKineticEquotionResolver resolver,
+            IKineticEquationResolver resolver,
             INavigationService navigationService,
             IMessenger messenger)
         {
@@ -135,7 +141,10 @@ namespace MobileXamarin.ViewModels
             SelectedWeightUnit = UnitRepository.GetStringByUnit(Units.Kilogram);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Determines if can execute Resolve command
+        /// </summary>
+        /// <returns>True when can execute Resolve command, False if not</returns>
         protected override bool ResolveCanExecute()
         {
             if (!string.IsNullOrEmpty(SelectedWeightUnit) && !string.IsNullOrEmpty(SelectedSpeedUnit))
@@ -146,14 +155,20 @@ namespace MobileXamarin.ViewModels
             return false;
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Executes Resolve command
+        /// </summary>
+        /// <returns>Task which execute command</returns>
         protected override async Task ResolveExecute()
         {
+            IsBusy = true;
             var weightUnit = UnitRepository.GetUnitByString(SelectedWeightUnit);
             var speedUnit = UnitRepository.GetUnitByString(SelectedSpeedUnit);
             var result = await resolver.Resolve(Weight, weightUnit, Speed, speedUnit);
             var parameters = new NavigationParameters { { "Result", result } };
             messenger.Send(result);
+            await Task.Delay(2000);
+            IsBusy = false;
 
             await NavigationService.NavigateTo(nameof(ResultView), parameters, true);
         }

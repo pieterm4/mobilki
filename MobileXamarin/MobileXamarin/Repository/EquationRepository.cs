@@ -32,7 +32,10 @@ namespace MobileXamarin.Repository
             };
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get all saved equations
+        /// </summary>
+        /// <returns>Returns all equations</returns>
         public IEnumerable<IEquation> GetEquations()
         {
             return equations;

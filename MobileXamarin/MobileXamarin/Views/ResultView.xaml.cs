@@ -5,10 +5,19 @@ using Xamarin.Forms.Xaml;
 
 namespace MobileXamarin.Views
 {
+    /// <summary>
+    /// Result view
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResultView : ContentPage
     {
+        /// <summary>
+        /// View model for that view
+        /// </summary>
         public IResultViewModel ViewModel { get; }
+        /// <summary>
+        /// Constructor for result view
+        /// </summary>
         public ResultView()
         {
             InitializeComponent();
@@ -16,6 +25,9 @@ namespace MobileXamarin.Views
 
         }
 
+        /// <summary>
+        /// Handle when view is appearing
+        /// </summary>
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -23,6 +35,10 @@ namespace MobileXamarin.Views
         }
 
 
+        /// <summary>
+        /// Handle when back button pressed
+        /// </summary>
+        /// <returns>True if pressed</returns>
         protected override bool OnBackButtonPressed()
         {
             ViewModel.Dispose();

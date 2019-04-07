@@ -5,7 +5,7 @@
 using System.Threading.Tasks;
 using MobileXamarin.Models;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <summary>
     /// Resolver for vertical rocket start equation
@@ -16,7 +16,7 @@ namespace MobileXamarin.EquotionResolvers
         /// Resolves rocket equation
         /// </summary>
         /// <param name="rocketParameter">Parameters of the rocket</param>
-        /// <returns></returns>
+        /// <returns>Result</returns>
         Task<Result> Resolve(RocketParameter rocketParameter);
     }
 }

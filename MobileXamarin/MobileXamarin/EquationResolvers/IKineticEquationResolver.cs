@@ -1,4 +1,4 @@
-﻿// IKineticEquotionResolver.cs
+﻿// IKineticEquationResolver.cs
 // All rights reserved
 // Piotr Makowiec 18-03-2019
 
@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using MobileXamarin.Enums;
 using MobileXamarin.Models;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <summary>
     /// Resolver for kinetic energy equation
     /// </summary>
-    public interface IKineticEquotionResolver
+    public interface IKineticEquationResolver
     {
         /// <summary>
         /// Resolves kinetic energy equation

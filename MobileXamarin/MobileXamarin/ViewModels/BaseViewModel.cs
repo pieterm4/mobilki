@@ -32,10 +32,7 @@ namespace MobileXamarin.ViewModels
         /// <param name="propertyName"></param>
         public void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            if (PropertyChanged == null)
-                return;
-
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

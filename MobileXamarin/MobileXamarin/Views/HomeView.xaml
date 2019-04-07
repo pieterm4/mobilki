@@ -15,7 +15,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Picker Grid.Row="0"  Title="Choose an equotion" 
+            <Picker Grid.Row="0"  Title="Choose an equation" 
                     ItemsSource="{Binding Equations, Mode=TwoWay}"
                     SelectedItem="{Binding SelectedEquation, Mode=TwoWay}"/>
 

@@ -3,11 +3,12 @@
 // Piotr Makowiec 24-03-2019
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MobileXamarin.Models
 {
     /// <summary>
-    /// Result of rocket equation resolver
+    /// Result holder for any equations
     /// </summary>
     public class Result
     {
@@ -35,6 +36,7 @@ namespace MobileXamarin.Models
         {
             ControlPoints = controlPoints;
             Solution = solution;
+            StartPoints = Enumerable.Empty<Point>();
         }
 
         /// <summary>
@@ -43,9 +45,11 @@ namespace MobileXamarin.Models
         /// <param name="controlPoints">Control points for chart</param>
         /// <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
         /// <param name="startPoints">Points before calculation</param>
-        public Result(IEnumerable<Point> controlPoints, IEnumerable<string> solution, IEnumerable<Point> startPoints) : this(controlPoints, solution)
+        public Result(IEnumerable<Point> controlPoints, IEnumerable<string> solution, IEnumerable<Point> startPoints)
         {
             StartPoints = startPoints;
+            ControlPoints = controlPoints;
+            Solution = solution;
         }
     }
 }

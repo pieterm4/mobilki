@@ -35,7 +35,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets all equations
+        /// </summary>
         public IEnumerable<IEquation> Equations { get; }
 
         /// <summary>
@@ -70,7 +72,7 @@ namespace MobileXamarin.ViewModels
                         await NavigationService.NavigateTo(nameof(KineticEnergyEquationView), animated: true);
                         break;
                     case EquationType.Lagrange:
-                        await NavigationService.NavigateTo(nameof(LagrangeEquotionView), animated: true);
+                        await NavigationService.NavigateTo(nameof(LagrangeEquationView), animated: true);
                         break;
                     case EquationType.Rocket:
                         await NavigationService.NavigateTo(nameof(RocketEquationView), animated: true);

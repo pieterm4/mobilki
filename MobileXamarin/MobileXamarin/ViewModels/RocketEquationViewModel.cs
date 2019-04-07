@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using MobileXamarin.Enums;
-using MobileXamarin.EquotionResolvers;
+using MobileXamarin.EquationResolvers;
 using MobileXamarin.IViewModels;
 using MobileXamarin.Models;
 using MobileXamarin.Repository;
@@ -35,7 +35,9 @@ namespace MobileXamarin.ViewModels
         private string selectedAmountOfThrownFuelUnit;
         private double amountOfThrownFuel;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets mass of the rocket
+        /// </summary>
         public double MassOfTheRocket
         {
             get => massOfTheRocket;
@@ -49,7 +51,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets mass of the fuel in the rocket
+        /// </summary>
         public double MassOfTheFuel
         {
             get => massOfTheFuel;
@@ -63,7 +67,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets for how long of the rocket's trip the result is calculating
+        /// </summary>
         public double FlightTime
         {
             get => flightTime;
@@ -77,7 +83,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets value of how much fuel is throwing out from the rocket
+        /// </summary>
         public double ProperImpulse
         {
             get => properImpulse;
@@ -91,7 +99,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Amount of thrown fuel away for period of time eg kg/s
+        /// </summary>
         public double AmountOfThrownFuel
         {
             get => amountOfThrownFuel;
@@ -105,7 +115,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Selected unit for mass of the rocket
+        /// </summary>
         public string SelectedMassOfTheRocketUnit
         {
             get => selectedMassOfTheRocketUnit;
@@ -119,7 +131,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Selected unit for mass of the fuel
+        /// </summary>
         public string SelectedMassOfTheFuelUnit
         {
             get => selectedMassOfTheFuelUnit;
@@ -133,7 +147,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Selected unit for the flight time
+        /// </summary>
         public string SelectedFlightTimeUnit
         {
             get => selectedFlightTimeUnit;
@@ -147,7 +163,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Selected unit for the proper impulse
+        /// </summary>
         public string SelectedProperImpulseUnit
         {
             get => selectedProperImpulseUnit;
@@ -161,7 +179,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Unit for thrown fuel away eg. kg/s
+        /// </summary>
         public string SelectedAmountOfThrownFuelUnit
         {
             get => selectedAmountOfThrownFuelUnit;
@@ -175,19 +195,29 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets units for mass of the rocket
+        /// </summary>
         public ObservableCollection<string> MassOfTheRocketUnits { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets units for mass of the fuel
+        /// </summary>
         public ObservableCollection<string> MassOfTheFuelUnits { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets units for the flight time
+        /// </summary>
         public ObservableCollection<string> FlightTimeUnits { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets units for the proper impulse
+        /// </summary>
         public ObservableCollection<string> ProperImpulseUnits { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets units for amount of thrown fuel
+        /// </summary>
         public ObservableCollection<string> AmountOfThrownFuelUnits { get; set; }
 
 
@@ -195,9 +225,9 @@ namespace MobileXamarin.ViewModels
         /// <summary>
         /// Constructor for RocketEquationViewModel
         /// </summary>
-        /// <param name="resolver"></param>
-        /// <param name="navigationService"></param>
-        /// <param name="messenger"></param>
+        /// <param name="resolver">Equation resolver for rocket</param>
+        /// <param name="navigationService">Navigation service</param>
+        /// <param name="messenger">Messenger</param>
         public RocketEquationViewModel(
             IRocketEquationResolver resolver,
             INavigationService navigationService,
@@ -252,7 +282,10 @@ namespace MobileXamarin.ViewModels
             SelectedAmountOfThrownFuelUnit = UnitRepository.GetStringByUnit(Units.KilogramPerSecond);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Determines if can execute Resolve command
+        /// </summary>
+        /// <returns>True when can execute Resolve command, False if not</returns>
         protected override bool ResolveCanExecute()
         {
             if (!string.IsNullOrEmpty(SelectedMassOfTheRocketUnit) &&
@@ -267,7 +300,10 @@ namespace MobileXamarin.ViewModels
             return false;
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Executes Resolve command
+        /// </summary>
+        /// <returns>Task which execute command</returns>
         protected override async Task ResolveExecute()
         {
             IsBusy = true;

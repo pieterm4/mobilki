@@ -7,12 +7,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MobileXamarin.Models;
 
-namespace MobileXamarin.EquotionResolvers
+namespace MobileXamarin.EquationResolvers
 {
     /// <inheritdoc />
     public class RocketEquationResolver : IRocketEquationResolver
     {
-        /// <inheritdoc />
+        /// <summary>
+        /// Resolves rocket equation
+        /// </summary>
+        /// <param name="rocketParameter">Parameters of the rocket</param>
+        /// <returns>Result</returns>
         public async Task<Result> Resolve(RocketParameter rocketParameter)
         {
             var time = Normalization.NormalizeTime(rocketParameter.FlightTime, rocketParameter.FlightTimeUnit);

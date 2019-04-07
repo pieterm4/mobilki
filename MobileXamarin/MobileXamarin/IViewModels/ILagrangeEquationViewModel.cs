@@ -4,7 +4,6 @@
 
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
-using Xamarin.Forms;
 using Point = MobileXamarin.Models.Point;
 
 namespace MobileXamarin.IViewModels

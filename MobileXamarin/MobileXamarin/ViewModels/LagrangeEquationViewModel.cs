@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using MobileXamarin.EquotionResolvers;
+using MobileXamarin.EquationResolvers;
 using MobileXamarin.IViewModels;
 using MobileXamarin.Views;
 using Xamarin.Forms.Navigation;
@@ -28,7 +28,9 @@ namespace MobileXamarin.ViewModels
         private double newX;
         private double newY;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets start control points for interpolation
+        /// </summary>
         public ObservableCollection<Point> ControlPoints
         {
             get => controlPoints;
@@ -44,7 +46,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets x position of new control point
+        /// </summary>
         public double NewX
         {
             get => newX;
@@ -59,7 +63,9 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets y position of new control point
+        /// </summary>
         public double NewY
         {
             get => newY;
@@ -74,10 +80,14 @@ namespace MobileXamarin.ViewModels
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets command which adds new control point
+        /// </summary>
         public RelayCommand AddControlPointCommand { get; set; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets command which removes last control point
+        /// </summary>
         public RelayCommand RemoveControlPointCommand { get; set; }
 
 
@@ -111,13 +121,19 @@ namespace MobileXamarin.ViewModels
             };
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Determines if can execute Resolve command
+        /// </summary>
+        /// <returns>True when can execute Resolve command, False if not</returns>
         protected override bool ResolveCanExecute()
         {
             return ControlPoints.Count > 1;
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Executes Resolve command
+        /// </summary>
+        /// <returns>Task which execute command</returns>
         protected override async Task ResolveExecute()
         {
             IsBusy = true;
