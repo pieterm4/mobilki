@@ -32,5 +32,6 @@ namespace MobileXamarin.IViewModels
         RelayCommand Finish { get; set; }
 
         Chart Chart { get; set; }
+        ObservableCollection<Point> StartPoints { get; set; }
     }
 }

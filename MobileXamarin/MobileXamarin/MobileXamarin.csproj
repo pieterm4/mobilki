@@ -33,6 +33,7 @@
     <EmbeddedResource Include="**\*.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Assets\delete.png" />
     <EmbeddedResource Include="AppResources\Assets\energiakinetyczna.png" />
     <EmbeddedResource Include="AppResources\Assets\ic_sample.png" />
     <EmbeddedResource Include="AppResources\Assets\lagrange.png" />
@@ -76,6 +77,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="AppResources\Assets\delete.png" />
     <None Remove="AppResources\Assets\energiakinetyczna.png" />
     <None Remove="AppResources\Assets\ic_sample.png" />
     <None Remove="AppResources\Assets\lagrange.png" />

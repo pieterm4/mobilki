@@ -3,8 +3,9 @@
 // Piotr Makowiec 24-03-2019
 
 using System.Collections.ObjectModel;
-using System.Drawing;
 using GalaSoft.MvvmLight.Command;
+using Xamarin.Forms;
+using Point = MobileXamarin.Models.Point;
 
 namespace MobileXamarin.IViewModels
 {

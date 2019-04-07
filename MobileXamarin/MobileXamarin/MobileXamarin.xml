@@ -284,6 +284,13 @@
             Resolver for Lagrange interpolation equation
             </summary>
         </member>
+        <member name="M:MobileXamarin.EquotionResolvers.ILagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
+            <summary>
+            Resolves lagrange interpolation
+            </summary>
+            <param name="controlPoints">Control points based on interpolation is calculated</param>
+            <returns>Points which can be displayed on the chart</returns>
+        </member>
         <member name="T:MobileXamarin.EquotionResolvers.IRocketEquationResolver">
             <summary>
             Resolver for vertical rocket start equation
@@ -301,6 +308,18 @@
         </member>
         <member name="M:MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver.Resolve(System.Double,MobileXamarin.Enums.Units,System.Double,MobileXamarin.Enums.Units)">
             <inheritdoc />
+        </member>
+        <member name="T:MobileXamarin.EquotionResolvers.LagrangeResolver">
+            <summary>
+            Lagrange resolver
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.EquotionResolvers.LagrangeResolver.Resolve(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
+            <summary>
+            Resolves lagrange interpolation
+            </summary>
+            <param name="controlPoints">Control points based on interpolation is calculated</param>
+            <returns>Points which can be displayed on the chart</returns>
         </member>
         <member name="T:MobileXamarin.EquotionResolvers.Normalization">
             <summary>
@@ -605,12 +624,25 @@
             Latex representation of the velocity at the end of the rocket's flight time
             </summary>
         </member>
+        <member name="P:MobileXamarin.Models.Result.StartPoints">
+            <summary>
+            Points before calculation
+            </summary>
+        </member>
         <member name="M:MobileXamarin.Models.Result.#ctor(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point},System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Constructor for Rocket EquationResult
+            Constructor for Result
             </summary>
             <param name="controlPoints">Control points for chart</param>
             <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
+        </member>
+        <member name="M:MobileXamarin.Models.Result.#ctor(System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{MobileXamarin.Models.Point})">
+            <summary>
+            Constructor for Result
+            </summary>
+            <param name="controlPoints">Control points for chart</param>
+            <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
+            <param name="startPoints">Points before calculation</param>
         </member>
         <member name="T:MobileXamarin.Models.RocketParameter">
             <summary>
@@ -863,12 +895,13 @@
         <member name="P:MobileXamarin.ViewModels.LagrangeEquationViewModel.RemoveControlPointCommand">
             <inheritdoc />
         </member>
-        <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.ILagrangeResolver,GalaSoft.MvvmLight.Messaging.IMessenger)">
+        <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.#ctor(MobileXamarin.EquotionResolvers.ILagrangeResolver,GalaSoft.MvvmLight.Messaging.IMessenger,Xamarin.Forms.Navigation.INavigationService)">
             <summary>
             Constructor for LagrangeEquationViewModel
             </summary>
             <param name="resolver">Lagrange interpolation equation resolver <see cref="T:MobileXamarin.EquotionResolvers.ILagrangeResolver"/></param>
             <param name="messenger">Messenger <see cref="T:GalaSoft.MvvmLight.Messaging.IMessenger"/></param>
+            <param name="navigationService">Navigation service <see cref="T:Xamarin.Forms.Navigation.INavigationService"/></param>
         </member>
         <member name="M:MobileXamarin.ViewModels.LagrangeEquationViewModel.ResolveCanExecute">
             <inheritdoc />
@@ -886,6 +919,11 @@
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.ControlPoints">
             <inheritdoc />
+        </member>
+        <member name="P:MobileXamarin.ViewModels.ResultViewModel.StartPoints">
+            <summary>
+            Points before calculation
+            </summary>
         </member>
         <member name="P:MobileXamarin.ViewModels.ResultViewModel.Finish">
             <inheritdoc />
@@ -1004,6 +1042,16 @@
         <member name="P:MobileXamarin.ViewModels.ViewModelLocator.Rocket">
             <summary>
             Gets an instance for <see cref="T:MobileXamarin.IViewModels.IRocketEquationViewModel"/> <see cref="T:MobileXamarin.ViewModels.RocketEquationViewModel"/>
+            </summary>
+        </member>
+        <member name="P:MobileXamarin.Views.LagrangeEquotionView.ViewModel">
+            <summary>
+            View Model which is context for that view
+            </summary>
+        </member>
+        <member name="M:MobileXamarin.Views.LagrangeEquotionView.#ctor">
+            <summary>
+            Lagrange Equation View Constructor
             </summary>
         </member>
     </members>

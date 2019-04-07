@@ -1,7 +1,5 @@
-﻿using System.Collections.Specialized;
-using System.Linq;
+﻿using System.Linq;
 using MobileXamarin.IViewModels;
-using MobileXamarin.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +13,7 @@ namespace MobileXamarin.Views
         {
             InitializeComponent();
             ViewModel = BindingContext as IResultViewModel;
-            
+
         }
 
         protected override void OnAppearing()

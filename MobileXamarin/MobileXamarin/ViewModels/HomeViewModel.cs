@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using MobileXamarin.Enums;
@@ -61,19 +62,27 @@ namespace MobileXamarin.ViewModels
 
         private async Task GoToNextPage()
         {
-            switch (SelectedEquation.EquationType)
+            try
             {
-                case EquationType.Kinetic:
-                    await NavigationService.NavigateTo(nameof(KineticEnergyEquationView), animated:true);
-                    break;
-                case EquationType.Lagrange:
-                    await NavigationService.NavigateTo(nameof(LagrangeEquotionView), animated: true);
-                    break;
-                case EquationType.Rocket:
-                    await NavigationService.NavigateTo(nameof(RocketEquationView), animated: true);
-                    break;
+                switch (SelectedEquation.EquationType)
+                {
+                    case EquationType.Kinetic:
+                        await NavigationService.NavigateTo(nameof(KineticEnergyEquationView), animated: true);
+                        break;
+                    case EquationType.Lagrange:
+                        await NavigationService.NavigateTo(nameof(LagrangeEquotionView), animated: true);
+                        break;
+                    case EquationType.Rocket:
+                        await NavigationService.NavigateTo(nameof(RocketEquationView), animated: true);
+                        break;
+                }
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+  
         }
     }
 }

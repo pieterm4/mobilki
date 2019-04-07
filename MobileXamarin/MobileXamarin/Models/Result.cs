@@ -22,7 +22,12 @@ namespace MobileXamarin.Models
         public IEnumerable<string> Solution { get; }
 
         /// <summary>
-        /// Constructor for Rocket EquationResult
+        /// Points before calculation
+        /// </summary>
+        public IEnumerable<Point> StartPoints { get; }
+
+        /// <summary>
+        /// Constructor for Result
         /// </summary>
         /// <param name="controlPoints">Control points for chart</param>
         /// <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
@@ -30,6 +35,17 @@ namespace MobileXamarin.Models
         {
             ControlPoints = controlPoints;
             Solution = solution;
+        }
+
+        /// <summary>
+        /// Constructor for Result
+        /// </summary>
+        /// <param name="controlPoints">Control points for chart</param>
+        /// <param name="solution">Latex representation of the velocity at the end of the rocket's flight</param>
+        /// <param name="startPoints">Points before calculation</param>
+        public Result(IEnumerable<Point> controlPoints, IEnumerable<string> solution, IEnumerable<Point> startPoints) : this(controlPoints, solution)
+        {
+            StartPoints = startPoints;
         }
     }
 }

@@ -49,6 +49,11 @@ namespace MobileXamarin.ViewModels
         /// <inheritdoc />
         public ObservableCollection<Point> ControlPoints { get; set; }
 
+        /// <summary>
+        /// Points before calculation
+        /// </summary>
+        public ObservableCollection<Point> StartPoints { get; set; }
+
         public Chart Chart
         {
             get => chart;
@@ -83,6 +88,7 @@ namespace MobileXamarin.ViewModels
             this.messenger.Register<Result>(this, OnGetMessage);
             Solution = new ObservableCollection<MathSource>();
             ControlPoints = new ObservableCollection<Point>();
+            StartPoints = new ObservableCollection<Point>();
             Chart = new LineChart()
             {
                 LineMode = LineMode.Straight,
@@ -110,6 +116,11 @@ namespace MobileXamarin.ViewModels
         private void SetupResult()
         {
             var result = GetResult();
+            SetupPoints(result);
+        }
+
+        private void SetupPoints(Result result)
+        {
             foreach (var value in result.Solution)
             {
                 Solution.Add(new MathSource(value));
@@ -118,6 +129,11 @@ namespace MobileXamarin.ViewModels
             foreach (var resultControlPoint in result.ControlPoints)
             {
                 ControlPoints.Add(resultControlPoint);
+            }
+
+            foreach (var startPoint in result.StartPoints)
+            {
+                StartPoints.Add(startPoint);
             }
         }
 
@@ -139,15 +155,8 @@ namespace MobileXamarin.ViewModels
         {
             Solution.Clear();
             ControlPoints.Clear();
-            foreach (var value in result.Solution)
-            {
-                Solution.Add(new MathSource(value));
-            }
-
-            foreach (var resultControlPoint in result.ControlPoints)
-            {
-                ControlPoints.Add(resultControlPoint);
-            }
+            StartPoints.Clear();
+            SetupPoints(result);
 
             SetupChartEntries();
         }

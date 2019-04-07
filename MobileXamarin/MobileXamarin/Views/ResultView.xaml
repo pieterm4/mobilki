@@ -46,15 +46,20 @@
 
             <telerikChart:RadCartesianChart x:Name="chart" Grid.Row="2">
                 <telerikChart:RadCartesianChart.HorizontalAxis>
-                    <telerikChart:CategoricalAxis />
+                    <telerikChart:NumericalAxis />
                 </telerikChart:RadCartesianChart.HorizontalAxis>
                 <telerikChart:RadCartesianChart.VerticalAxis>
                     <telerikChart:NumericalAxis />
                 </telerikChart:RadCartesianChart.VerticalAxis>
                 <telerikChart:RadCartesianChart.Series>
-                    <telerikChart:LineSeries
-                                             ValueBinding="Y" 
-                                             ItemsSource="{Binding ControlPoints}" />
+                    <telerikChart:ScatterLineSeries 
+                                             YValueBinding="Y"
+                                             XValueBinding="X"
+                                             DisplayName="Interpolation"
+                                             ItemsSource="{Binding ControlPoints}" x:Name="ControlPointSeries" />
+                    <telerikChart:ScatterPointSeries YValueBinding="Y"
+                                                     DisplayName="Matching points"
+                                                    XValueBinding="X" ItemsSource="{Binding StartPoints}" x:Name="StartPointSeries" ShowLabels="True" />
                 </telerikChart:RadCartesianChart.Series>
             </telerikChart:RadCartesianChart>
 
