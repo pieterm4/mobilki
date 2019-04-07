@@ -1,6 +1,8 @@
 var class_mobile_xamarin_1_1_models_1_1_rocket_parameter =
 [
-    [ "RocketParameter", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#aa5fa203881b172e2bd85f4bbc800dec6", null ],
+    [ "RocketParameter", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#af221328da81c05c9832760a10eef6526", null ],
+    [ "AmountOfThrownFuel", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#aac0190007b970a181a16368e3be09d4e", null ],
+    [ "AmountOfThrownFuelUnit", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#a4ba5ae346ae7b21abca43e6f7644d7f5", null ],
     [ "FlightTime", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#ae8205807a2443b73521e59edf78a294c", null ],
     [ "FlightTimeUnit", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#acc1e83205ab48b862d7fb4f86e0e9d99", null ],
     [ "MassOfTheFuel", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html#a42d795809ad4def5ec7166ac41abf840", null ],

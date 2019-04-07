@@ -13,8 +13,8 @@ var hierarchy =
       [ "MobileXamarin.Views.HomeView", "class_mobile_xamarin_1_1_views_1_1_home_view.html", null ],
       [ "MobileXamarin.Views.KineticEnergyEquationView", "class_mobile_xamarin_1_1_views_1_1_kinetic_energy_equation_view.html", null ],
       [ "MobileXamarin.Views.KineticEnergyEquationView", "class_mobile_xamarin_1_1_views_1_1_kinetic_energy_equation_view.html", null ],
-      [ "MobileXamarin.Views.LagrangeEquotionView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equotion_view.html", null ],
-      [ "MobileXamarin.Views.LagrangeEquotionView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equotion_view.html", null ],
+      [ "MobileXamarin.Views.LagrangeEquationView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equation_view.html", null ],
+      [ "MobileXamarin.Views.LagrangeEquationView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equation_view.html", null ],
       [ "MobileXamarin.Views.ResultView", "class_mobile_xamarin_1_1_views_1_1_result_view.html", null ],
       [ "MobileXamarin.Views.ResultView", "class_mobile_xamarin_1_1_views_1_1_result_view.html", null ],
       [ "MobileXamarin.Views.RocketEquationView", "class_mobile_xamarin_1_1_views_1_1_rocket_equation_view.html", null ],
@@ -52,11 +52,11 @@ var hierarchy =
     [ "MobileXamarin.IViewModels.IHomeViewModel", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_home_view_model.html", [
       [ "MobileXamarin.ViewModels.HomeViewModel", "class_mobile_xamarin_1_1_view_models_1_1_home_view_model.html", null ]
     ] ],
-    [ "MobileXamarin.EquotionResolvers.IKineticEquotionResolver", "interface_mobile_xamarin_1_1_equotion_resolvers_1_1_i_kinetic_equotion_resolver.html", [
-      [ "MobileXamarin.EquotionResolvers.KineticKineticEquotionResolver", "class_mobile_xamarin_1_1_equotion_resolvers_1_1_kinetic_kinetic_equotion_resolver.html", null ]
+    [ "MobileXamarin.EquationResolvers.IKineticEquationResolver", "interface_mobile_xamarin_1_1_equation_resolvers_1_1_i_kinetic_equation_resolver.html", [
+      [ "MobileXamarin.EquationResolvers.KineticEquationResolver", "class_mobile_xamarin_1_1_equation_resolvers_1_1_kinetic_equation_resolver.html", null ]
     ] ],
-    [ "MobileXamarin.EquotionResolvers.ILagrangeResolver", "interface_mobile_xamarin_1_1_equotion_resolvers_1_1_i_lagrange_resolver.html", [
-      [ "MobileXamarin.EquotionResolvers.LagrangeResolver", "class_mobile_xamarin_1_1_equotion_resolvers_1_1_lagrange_resolver.html", null ]
+    [ "MobileXamarin.EquationResolvers.ILagrangeResolver", "interface_mobile_xamarin_1_1_equation_resolvers_1_1_i_lagrange_resolver.html", [
+      [ "MobileXamarin.EquationResolvers.LagrangeResolver", "class_mobile_xamarin_1_1_equation_resolvers_1_1_lagrange_resolver.html", null ]
     ] ],
     [ "INotifyPropertyChanged", null, [
       [ "MobileXamarin.ViewModels.BaseViewModel", "class_mobile_xamarin_1_1_view_models_1_1_base_view_model.html", [
@@ -65,11 +65,12 @@ var hierarchy =
         [ "MobileXamarin.ViewModels.ResultViewModel", "class_mobile_xamarin_1_1_view_models_1_1_result_view_model.html", null ]
       ] ]
     ] ],
-    [ "MobileXamarin.EquotionResolvers.IRocketEquationResolver", "interface_mobile_xamarin_1_1_equotion_resolvers_1_1_i_rocket_equation_resolver.html", [
-      [ "MobileXamarin.EquotionResolvers.RocketEquationResolver", "class_mobile_xamarin_1_1_equotion_resolvers_1_1_rocket_equation_resolver.html", null ]
+    [ "MobileXamarin.EquationResolvers.IRocketEquationResolver", "interface_mobile_xamarin_1_1_equation_resolvers_1_1_i_rocket_equation_resolver.html", [
+      [ "MobileXamarin.EquationResolvers.RocketEquationResolver", "class_mobile_xamarin_1_1_equation_resolvers_1_1_rocket_equation_resolver.html", null ]
     ] ],
+    [ "MobileXamarin.Models.Point", "class_mobile_xamarin_1_1_models_1_1_point.html", null ],
     [ "MobileXamarin.AppResources.Localization.Resources", "class_mobile_xamarin_1_1_app_resources_1_1_localization_1_1_resources.html", null ],
-    [ "MobileXamarin.Models.RocketEquationResult", "class_mobile_xamarin_1_1_models_1_1_rocket_equation_result.html", null ],
+    [ "MobileXamarin.Models.Result", "class_mobile_xamarin_1_1_models_1_1_result.html", null ],
     [ "MobileXamarin.Models.RocketParameter", "class_mobile_xamarin_1_1_models_1_1_rocket_parameter.html", null ],
     [ "MobileXamarin.ViewModels.ViewModelLocator", "class_mobile_xamarin_1_1_view_models_1_1_view_model_locator.html", null ]
 ];

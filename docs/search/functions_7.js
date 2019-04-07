@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['onappearing',['OnAppearing',['../class_mobile_xamarin_1_1_views_1_1_result_view.html#aeae13c816971ea06fc8ce5cf07cd7ac2',1,'MobileXamarin::Views::ResultView']]],
   ['onbackbuttonpressed',['OnBackButtonPressed',['../class_mobile_xamarin_1_1_views_1_1_result_view.html#ad2e7f2301c00a16e42e31c09f7d75436',1,'MobileXamarin::Views::ResultView']]],
   ['onpropertychanged',['OnPropertyChanged',['../class_mobile_xamarin_1_1_view_models_1_1_base_view_model.html#ae6584c731bfe51c3e3e725f1a44d3bbb',1,'MobileXamarin::ViewModels::BaseViewModel']]],
   ['onresume',['OnResume',['../class_mobile_xamarin_1_1_app.html#ad8c95a86c0ad18a1be7797b20f7714eb',1,'MobileXamarin::App']]],

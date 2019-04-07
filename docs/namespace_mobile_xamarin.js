@@ -1,7 +1,7 @@
 var namespace_mobile_xamarin =
 [
     [ "AppResources", "namespace_mobile_xamarin_1_1_app_resources.html", "namespace_mobile_xamarin_1_1_app_resources" ],
-    [ "EquotionResolvers", "namespace_mobile_xamarin_1_1_equotion_resolvers.html", "namespace_mobile_xamarin_1_1_equotion_resolvers" ],
+    [ "EquationResolvers", "namespace_mobile_xamarin_1_1_equation_resolvers.html", "namespace_mobile_xamarin_1_1_equation_resolvers" ],
     [ "IModels", "namespace_mobile_xamarin_1_1_i_models.html", "namespace_mobile_xamarin_1_1_i_models" ],
     [ "IViewModels", "namespace_mobile_xamarin_1_1_i_view_models.html", "namespace_mobile_xamarin_1_1_i_view_models" ],
     [ "Models", "namespace_mobile_xamarin_1_1_models.html", "namespace_mobile_xamarin_1_1_models" ],

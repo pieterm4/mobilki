@@ -1,6 +1,6 @@
 var class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model =
 [
-    [ "LagrangeEquationViewModel", "class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model.html#ab89b8fe0ff4c73dd7b8b4de7a7ea74e0", null ],
+    [ "LagrangeEquationViewModel", "class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model.html#ae6735c51b421651aee4b65d3a091479c", null ],
     [ "ResolveCanExecute", "class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model.html#a9c62d443752fa8919cdfdd4010a04c72", null ],
     [ "ResolveExecute", "class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model.html#a07ac5477104a419475914921aa4119de", null ],
     [ "AddControlPointCommand", "class_mobile_xamarin_1_1_view_models_1_1_lagrange_equation_view_model.html#ae5aca2c0f2cf9bd654130d9a6a94d893", null ],

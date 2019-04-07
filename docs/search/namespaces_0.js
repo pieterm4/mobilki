@@ -2,7 +2,7 @@ var searchData=
 [
   ['appresources',['AppResources',['../namespace_mobile_xamarin_1_1_app_resources.html',1,'MobileXamarin']]],
   ['enums',['Enums',['../namespace_mobile_xamarin_1_1_enums.html',1,'MobileXamarin']]],
-  ['equotionresolvers',['EquotionResolvers',['../namespace_mobile_xamarin_1_1_equotion_resolvers.html',1,'MobileXamarin']]],
+  ['equationresolvers',['EquationResolvers',['../namespace_mobile_xamarin_1_1_equation_resolvers.html',1,'MobileXamarin']]],
   ['imodels',['IModels',['../namespace_mobile_xamarin_1_1_i_models.html',1,'MobileXamarin']]],
   ['iviewmodels',['IViewModels',['../namespace_mobile_xamarin_1_1_i_view_models.html',1,'MobileXamarin']]],
   ['localization',['Localization',['../namespace_mobile_xamarin_1_1_app_resources_1_1_localization.html',1,'MobileXamarin::AppResources']]],

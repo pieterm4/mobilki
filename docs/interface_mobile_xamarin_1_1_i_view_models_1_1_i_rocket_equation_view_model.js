@@ -1,5 +1,7 @@
 var interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model =
 [
+    [ "AmountOfThrownFuel", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a360ca4f20d089013a79f6db078f032ab", null ],
+    [ "AmountOfThrownFuelUnits", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#ad063f6352009a038f973d9fc1724549b", null ],
     [ "FlightTime", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#ac577a897aac0a94a923052601bfe9d5f", null ],
     [ "FlightTimeUnits", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a51cbdc582b9f6d278d84f2fbb3673d4d", null ],
     [ "MassOfTheFuel", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a6990eb56f6e36eb00ec7c57ca9b8e94a", null ],
@@ -8,6 +10,7 @@ var interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model 
     [ "MassOfTheRocketUnits", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#ae12c3b1997a747d2989bc2e4a5ba3e5b", null ],
     [ "ProperImpulse", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a50c937e35bb9c16878dc612e1eabbf35", null ],
     [ "ProperImpulseUnits", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a56eda6da22d4140bd2f2bb04803a6f21", null ],
+    [ "SelectedAmountOfThrownFuelUnit", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a8e83ecfd1af9400bad4730d317ea1ba3", null ],
     [ "SelectedFlightTimeUnit", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#ab1101a8e3f9cc12d55d14a08d0d5936d", null ],
     [ "SelectedMassOfTheFuelUnit", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a7ac288e807769154f7a43ee0c69ca65b", null ],
     [ "SelectedMassOfTheRocketUnit", "interface_mobile_xamarin_1_1_i_view_models_1_1_i_rocket_equation_view_model.html#a5f4575b96e63850d0c78233d3c34b5e4", null ],

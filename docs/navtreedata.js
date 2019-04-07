@@ -23,7 +23,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "MobileXamarin", "index.html", [
+  [ "Xamarin Equations App", "index.html", [
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ],
       [ "Package Functions", "namespacemembers.html", [
@@ -56,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_app_8xaml_8cs.html",
-"files.html"
+"class_mobile_xamarin_1_1_views_1_1_result_view.html#a7eaf3ef30d01d6bdf47bb3ada99f10de"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

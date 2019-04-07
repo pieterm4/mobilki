@@ -9,6 +9,7 @@ var _units_8cs =
       [ "MeterForSecond", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46aa56333d27efebc796722766f9f5f3a49", null ],
       [ "Kilogram", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a9d71f8d145c74f11bf9b02047645bcf4", null ],
       [ "Gram", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a784d4f6db5a43e9ca9f16ce5624f29b1", null ],
+      [ "KilogramPerSecond", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a34979517328af2edc97761a48753abf5", null ],
       [ "Celsius", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a1ef292971cad34ecb884283503bf86c1", null ],
       [ "Kelvin", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a8cdaea2a5cf19cc337a1441ca7f83d42", null ],
       [ "Unknown", "_units_8cs.html#a8df2fcf851796eff6e0cf1c2f3d3fb46a88183b946cc5f0e8c96b2e66e1c74a7e", null ]

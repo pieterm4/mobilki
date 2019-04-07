@@ -4,7 +4,7 @@ var namespace_mobile_xamarin_1_1_views =
     [ "ForgotPasswordView", "class_mobile_xamarin_1_1_views_1_1_forgot_password_view.html", null ],
     [ "HomeView", "class_mobile_xamarin_1_1_views_1_1_home_view.html", "class_mobile_xamarin_1_1_views_1_1_home_view" ],
     [ "KineticEnergyEquationView", "class_mobile_xamarin_1_1_views_1_1_kinetic_energy_equation_view.html", "class_mobile_xamarin_1_1_views_1_1_kinetic_energy_equation_view" ],
-    [ "LagrangeEquotionView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equotion_view.html", "class_mobile_xamarin_1_1_views_1_1_lagrange_equotion_view" ],
+    [ "LagrangeEquationView", "class_mobile_xamarin_1_1_views_1_1_lagrange_equation_view.html", "class_mobile_xamarin_1_1_views_1_1_lagrange_equation_view" ],
     [ "ResultView", "class_mobile_xamarin_1_1_views_1_1_result_view.html", "class_mobile_xamarin_1_1_views_1_1_result_view" ],
     [ "RocketEquationView", "class_mobile_xamarin_1_1_views_1_1_rocket_equation_view.html", "class_mobile_xamarin_1_1_views_1_1_rocket_equation_view" ],
     [ "SignInView", "class_mobile_xamarin_1_1_views_1_1_sign_in_view.html", null ],
