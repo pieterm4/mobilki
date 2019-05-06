@@ -32,7 +32,7 @@ namespace MobileXamarin.Models
         /// <inheritdoc />
         public override string ToString()
         {
-            return $"P({X}, {Y})";
+            return $"P({X.ToString("N3")}, {Y.ToString("N3")})";
         }
     }
 }
