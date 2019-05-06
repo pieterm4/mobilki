@@ -31,7 +31,7 @@ namespace MobileXamarin.EquationResolvers
 
             await Task.Run(() =>
             {
-                var secondStep = @"E_k = \frac{weight * c^2}{\sqrt{\frac{1 - speed^2}{c^2}}} - weight * c^2";
+                var secondStep = @"E_k = \frac{"+weight+@" * c^2}{\sqrt{\frac{1 - "+speed+ @"^2}{c^2}}} - " + weight + @" * c^2";
                 var mathResult =
                     ((normalizedWeight * Math.Pow(lightSpeed, 2.0)) /
                     Math.Sqrt(1.0 - (Math.Pow(normalizedSpeed, 2.0)) / Math.Pow(lightSpeed, 2.0))) -
