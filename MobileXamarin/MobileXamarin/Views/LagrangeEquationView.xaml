@@ -55,7 +55,7 @@
                               ColumnSpacing="0"
                               RowSpacing="0">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="80" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Button Margin="0"
@@ -63,7 +63,7 @@
                                     BorderRadius="0"
                                     Clicked="RemoveItem"
                                     Text="Delete"
-                                    WidthRequest="70" />
+                                    WidthRequest="80" />
                         </Grid>
                     </DataTemplate>
                 </telerikDataControls:RadListView.ItemSwipeContentTemplate>
