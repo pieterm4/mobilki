@@ -31,6 +31,8 @@ namespace MobileXamarin.ViewModels
         private readonly SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
         private ObservableCollection<MathSource> solution;
         private Chart chart;
+        private bool isChartVisible;
+
 
         /// <summary>
         /// Gets or sets collection of step results for the equation in MathSource type to display math symbols correctly
@@ -74,6 +76,21 @@ namespace MobileXamarin.ViewModels
             }
         }
 
+        public bool IsChartVisible
+        {
+            get => isChartVisible;
+            set {
+                if (isChartVisible != value) {
+                    isChartVisible = value;
+                    OnPropertyChanged(nameof(IsChartVisible));
+                }
+            }
+        }
+
+        private void SetChartVisibility() {
+            IsChartVisible = ControlPoints.Count>0;
+        }
+
         /// <summary>
         /// Gets or sets command which finish this equation resolving and goes to the start page
         /// </summary>
@@ -107,6 +124,7 @@ namespace MobileXamarin.ViewModels
             SetupResult();
 
             SetupChartEntries();
+            SetChartVisibility();
         }
 
         private void SetupChartEntries()
@@ -166,8 +184,9 @@ namespace MobileXamarin.ViewModels
             ControlPoints.Clear();
             StartPoints.Clear();
             SetupPoints(result);
-
+           
             SetupChartEntries();
+            SetChartVisibility();
         }
 
         private Result GetResult()

@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Command;
 using Microcharts;
 using MobileXamarin.Models;
 
+
 namespace MobileXamarin.IViewModels
 {
     /// <summary>

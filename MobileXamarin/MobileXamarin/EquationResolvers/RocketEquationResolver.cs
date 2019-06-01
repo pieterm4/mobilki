@@ -23,6 +23,7 @@ namespace MobileXamarin.EquationResolvers
             var massOfTheRocket = rocketParameter.MassOfTheRocket + rocketParameter.MassOfTheFuel;
             var solution =  await Task.Run(() =>
             {
+                
                 var first = @"a = \frac{dv}{dt} = \frac{u}{M} * \frac{dM}{dt} - g";
                 var second = @"dv = \frac{u}{M} * dM - gdt";
                 var third = @"\int_{v_0}^{v} dv = -u \int_{m_0}^{m} \frac{dM}{M} - \int_{0}^{t} g dt";

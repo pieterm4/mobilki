@@ -36,7 +36,7 @@
                     <DataTemplate>
                         <telerikListView:ListViewTemplateCell>
                             <telerikListView:ListViewTemplateCell.View>
-                                <math:MathView Source="{Binding}" FontSize="25" HorizontalOptions="Start" Margin="10"/>
+                                <math:MathView Source="{Binding}" FontSize="35"  Margin="0,0,0,-5"/>
                             </telerikListView:ListViewTemplateCell.View>
                         </telerikListView:ListViewTemplateCell>
                     </DataTemplate>
@@ -44,7 +44,7 @@
             </telerikDataControls:RadListView>
             <!--<microcharts:ChartView Grid.Row="2" x:Name="Chart" Margin="0, 10, 0, 10" Chart="{Binding Chart, Mode=TwoWay}" />-->
 
-            <telerikChart:RadCartesianChart x:Name="chart" Grid.Row="2">
+            <telerikChart:RadCartesianChart x:Name="chart" Grid.Row="2" IsVisible="{Binding IsChartVisible}">
                 <telerikChart:RadCartesianChart.HorizontalAxis>
                     <telerikChart:NumericalAxis />
                 </telerikChart:RadCartesianChart.HorizontalAxis>
